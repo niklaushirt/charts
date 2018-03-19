@@ -67,7 +67,7 @@ service:
 ## Database access attributes - empty value will be
 ## overriden with default
 database:
-  user: ""
-  password: ""
-  name: ""
+  user: "demo"
+  password: "demo"
+  name: "demo"
   dbcmd: ""
