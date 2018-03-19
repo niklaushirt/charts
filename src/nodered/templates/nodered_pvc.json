@@ -1,0 +1,17 @@
+{
+  "kind": "PersistentVolumeClaim",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "{{ .Values.persistentVolumeClaim }}"
+  },
+  "spec": {
+    "resources": {
+      "requests": {
+        "storage": "{{ .Values.persistentVolumeClaimSize }}"
+      }
+    },
+    "accessModes": [
+      "ReadWriteMany"
+    ]
+  }
+}

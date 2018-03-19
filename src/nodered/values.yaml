@@ -1,0 +1,17 @@
+# Default values for mychart.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# Version  for Node Red
+tag: 0.17.5
+
+#Name and Size for PV
+persistentVolumeClaim: "nodered-pv-claim"
+persistentVolumeClaimSize: "2Gi"
+
+#Resource limits
+memoryLimit: "512Mi"
+cpuLimit: 0.6
+
+#Node Port
+nodePort: 30750

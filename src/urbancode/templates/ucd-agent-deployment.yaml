@@ -1,0 +1,30 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: ucd-agent
+    app: {{ template "fullname" . }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: {{ .Release.Name }}
+    heritage: "{{ .Release.Service }}"
+  name: ucd-agent
+spec:
+  replicas: {{ .Values.replicaCount_Agent }}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: ucd-agent
+        app: {{ template "fullname" . }}
+        chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+        release: {{ .Release.Name }}
+        heritage: "{{ .Release.Service }}"
+    spec: 
+      containers:
+      - image: ibmcom/ucda:{{ .Values.tag }}
+        name: ucd-agent
+        resources: {}
+      restartPolicy: Always
+status: {}

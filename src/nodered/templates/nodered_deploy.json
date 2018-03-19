@@ -1,0 +1,48 @@
+{
+  "apiVersion": "extensions/v1beta1",
+  "kind": "Deployment",
+  "metadata": {
+    "name": "nodered"
+  },
+  "spec": {
+    "replicas": 1,
+    "template": {
+      "metadata": {
+        "labels": {
+          "app": "nodered"
+        }
+      },
+      "spec": {
+        "volumes": [{
+          "name": "nodered-pv-storage",
+          "persistentVolumeClaim": {
+            "claimName": "{{ .Values.persistentVolumeClaim }}"
+          }
+        }],
+        "containers": [{
+          "name": "nodered",
+          "image": "nodered/node-red-docker:{{ .Values.tag }}",
+          "ports": [{
+            "containerPort": 1880,
+            "protocol": "TCP"
+          }],
+          "volumeMounts": [{
+            "mountPath": "/data",
+            "name": "nodered-pv-storage"
+          }],
+          "imagePullPolicy": "IfNotPresent",
+          "resources": {
+            "limits": {
+              "cpu": {{ .Values.cpuLimit }},
+              "memory": "{{ .Values.memoryLimit }}"
+            }
+          },
+          "env": [{
+            "name": "NODE_ENV",
+            "value": "production"
+          }]
+        }]
+      }
+    }
+  }
+}

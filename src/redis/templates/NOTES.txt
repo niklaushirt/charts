@@ -1,0 +1,6 @@
+1. Shell into the redis contianer with redis-tools installed:
+  kubectl run redis-client --rm --tty -i --image bitnami/redis:3.2.9-r0 -- bash
+2. ping the hostname of the redis service:
+  redis-cli -h {{ template "fullname" . }} -p 6379 ping
+3. Identify which of the nodes in the StatefulSet is the master:
+  redis-cli -h {{ template "fullname" . }} -p 6379 info replication

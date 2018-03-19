@@ -1,0 +1,23 @@
+#*******************************************************************************
+# Licensed Materials - Property of IBM
+# "Restricted Materials of IBM"
+#
+# Copyright IBM Corp. 2017 All Rights Reserved
+#
+# US Government Users Restricted Rights - Use, duplication or disclosure
+# restricted by GSA ADP Schedule Contract with IBM Corp.
+#*******************************************************************************
+
+image:
+  repo:
+    orion: ibmcom/microclimate-orion
+    filewatcher: ibmcom/microclimate-file-watcher
+    portal: ibmcom/microclimate-portal
+
+  tag: beta1
+  imagePullPolicy: IfNotPresent
+
+persistence:
+  enabled: false
+  size: 1Gi
+  class: ""

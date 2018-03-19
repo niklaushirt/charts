@@ -1,0 +1,10 @@
+apiVersion: v1
+description: A Helm chart for IBM UrbanCode Deploy
+name: urbancode
+version: 6.2.7
+sources:
+- https://github.com/niklaushirt/chartslocal
+icon: https://github.com/niklaushirt/chartslocal/raw/master/icons/urbancodedeployicon.png
+maintainers:
+- name: Niklaus Hirt
+  email: niklaushirt@gmail.com

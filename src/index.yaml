@@ -1,0 +1,260 @@
+apiVersion: v1
+entries:
+  ghost:
+  - appVersion: 0.11.10
+    created: 2018-03-19T10:09:00.885959+01:00
+    description: A simple, powerful publishing platform that allows you to share your
+      stories with the world
+    digest: 1aea0e3e7c81687d92eb804b18c107250ed87a640e8b72b75751bf874990988f
+    engine: gotpl
+    home: http://www.ghost.org/
+    icon: https://bitnami.com/assets/stacks/ghost/img/ghost-stack-220x234.png
+    keywords:
+    - ghost
+    - blog
+    - http
+    - web
+    - application
+    - nodejs
+    - javascript
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: ghost
+    sources:
+    - https://github.com/bitnami/bitnami-docker-ghost
+    urls:
+    - https://raw.githubusercontent.com/niklaushirt/charts/master/charts/repo/stable/ghost-0.4.15.tgz
+    version: 0.4.15
+  jenkins:
+  - apiVersion: v1
+    created: 2018-03-19T10:09:00.886771+01:00
+    description: The leading open source automation server, Jenkins provides hundreds
+      of plugins to support building, deploying and automating any project.
+    digest: cd2a6768aa7cdf609b3ba05d4d66c553e5b599f044de369b5a677ac0784cf61c
+    engine: gotpl
+    home: https://jenkins.io/
+    icon: https://wiki.jenkins-ci.org/download/attachments/2916393/logo.png
+    maintainers:
+    - name: IBM Cloud Private
+    name: jenkins
+    sources:
+    - https://github.com/jenkinsci/jenkins
+    - https://github.com/jenkinsci/docker-jnlp-slave
+    - https://github.com/jenkinsci/kubernetes-plugin
+    tillerVersion: '>=2.6.0'
+    urls:
+    - https://raw.githubusercontent.com/niklaushirt/charts/master/charts/repo/stable/jenkins-2.19.4.tgz
+    version: 2.19.4
+  kubernetes-dashboard:
+  - appVersion: 1.7.1
+    created: 2018-03-19T10:09:00.887152+01:00
+    description: General-purpose web UI for Kubernetes clusters
+    digest: e82e3d9c9a33e225a8c227a236689a378d51d17ee6a10b9e327381ce0c9e72e8
+    keywords:
+    - kubernetes
+    - dashboard
+    maintainers:
+    - email: Kevin.Fox@pnnl.gov
+      name: kfox1111
+    name: kubernetes-dashboard
+    urls:
+    - https://raw.githubusercontent.com/niklaushirt/charts/master/charts/repo/stable/kubernetes-dashboard-0.4.2.tgz
+    version: 0.4.2
+  mariadb:
+  - appVersion: 10.1.29
+    created: 2018-03-19T10:09:00.887715+01:00
+    description: Fast, reliable, scalable, and easy to use open-source relational
+      database system. MariaDB Server is intended for mission-critical, heavy-load
+      production systems as well as for embedding into mass-deployed software.
+    digest: 3cd12142a8cd77998a85f6b6ea5c80830936faa3fc41215ad03f9acb5a94d636
+    engine: gotpl
+    home: https://mariadb.org
+    icon: https://bitnami.com/assets/stacks/mariadb/img/mariadb-stack-220x234.png
+    keywords:
+    - mariadb
+    - mysql
+    - database
+    - sql
+    - prometheus
+    maintainers:
+    - email: containers@bitnami.com
+      name: bitnami-bot
+    name: mariadb
+    sources:
+    - https://github.com/bitnami/bitnami-docker-mariadb
+    - https://github.com/prometheus/mysqld_exporter
+    urls:
+    - https://raw.githubusercontent.com/niklaushirt/charts/master/charts/repo/stable/mariadb-2.1.1.tgz
+    version: 2.1.1
+  microclimate:
+  - created: 2018-03-19T10:09:00.888073+01:00
+    description: Environment for end to end development, from code generation to cloud
+      deployment.
+    digest: 1e986494637b76dd1f4bcaef632baed8039596d85c9e7788cd09568fa39f8590
+    name: microclimate
+    tillerVersion: '>=2.4.0'
+    urls:
+    - https://raw.githubusercontent.com/niklaushirt/charts/master/charts/repo/stable/microclimate-0.1.0-beta.tgz
+    version: 0.1.0-beta
+  mongodb:
+  - appVersion: 3.4.10
+    created: 2018-03-19T10:09:00.88845+01:00
+    description: NoSQL document-oriented database that stores JSON-like documents
+      with dynamic schemas, simplifying the integration of data in content-driven
+      applications.
+    digest: 8df1b89f6121161298f59cab3b4cb12b6cf577e1e3ac8ff76d0c79aa9afc79fb
+    engine: gotpl
+    home: https://mongodb.org
+    icon: https://bitnami.com/assets/stacks/mongodb/img/mongodb-stack-220x234.png
+    keywords:
+    - mongodb
+    - database
+    - nosql
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: mongodb
+    sources:
+    - https://github.com/bitnami/bitnami-docker-mongodb
+    urls:
+    - https://raw.githubusercontent.com/niklaushirt/charts/master/charts/repo/stable/mongodb-0.4.18.tgz
+    version: 0.4.18
+  mqadvanceddev:
+  - apiVersion: v1
+    created: 2018-03-19T10:09:00.889647+01:00
+    description: IBM MQ queue manager
+    digest: ab30bc1c050b0b4941e0cb233d6019ea8abcf1f9a242a8bfd1e2fea645f45e2e
+    icon: https://developer.ibm.com/messaging/wp-content/uploads/sites/18/2017/07/IBM-MQ-Square-200.png
+    name: mqadvanceddev
+    sources:
+    - https://github.com/niklaushirt/chartslocal
+    tillerVersion: '>=2.4.0'
+    urls:
+    - https://raw.githubusercontent.com/niklaushirt/charts/master/charts/repo/stable/mqadvanceddev-1.0.2.tgz
+    version: 1.0.2
+  nginx:
+  - created: 2018-03-19T10:09:00.889906+01:00
+    description: Nginx for Linux
+    digest: 0d1c565930c844dcc1c6fbfaa4abbfe175964134969e40985e16c88306757d97
+    home: https://github.com/kubernetes/helm
+    icon: https://pbs.twimg.com/profile_images/567774844322713600/tYoVju31.png
+    keywords:
+    - http
+    - nginx
+    - www
+    - web
+    maintainers:
+    - email: guo@ca.ibm.com
+      name: guo
+    name: nginx
+    sources:
+    - https://hub.docker.com/_/nginx/
+    urls:
+    - https://raw.githubusercontent.com/niklaushirt/charts/master/charts/repo/stable/nginx-1.8.1.tgz
+    version: 1.8.1
+  nodered:
+  - apiVersion: v1
+    created: 2018-03-19T10:09:00.890229+01:00
+    description: A Helm chart for NodeRed
+    digest: 40c2048445d8a6d6e76ddea009c808e902581d278393dfaf1f926444a4534e4a
+    icon: https://github.com/niklaushirt/chartslocal/raw/master/icons/noderedicon.png
+    maintainers:
+    - email: niklaushirt@gmail.com
+      name: Niklaus Hirt
+    name: nodered
+    sources:
+    - https://github.com/niklaushirt/chartslocal
+    urls:
+    - https://raw.githubusercontent.com/niklaushirt/charts/master/charts/repo/stable/nodered-0.17.5.tgz
+    version: 0.17.5
+  redis:
+  - created: 2018-03-19T10:09:00.890504+01:00
+    description: Redis for Linux
+    digest: 57f77b585eb05748a6fe3a1c139dfe47703e06f5ae4a7e547266969873370c9f
+    home: https://github.com/redis
+    icon: https://avatars1.githubusercontent.com/u/1529926?v=3&s=200
+    maintainers:
+    - email: guo@ca.ibm.com
+      name: guo
+    name: redis
+    sources:
+    - https://hub.docker.com/r/liuhougangxa/redis-3.2.0/
+    urls:
+    - https://raw.githubusercontent.com/niklaushirt/charts/master/charts/repo/stable/redis-3.2.0.tgz
+    version: 3.2.0
+  sonarqube:
+  - appVersion: "6.5"
+    created: 2018-03-19T10:09:00.891309+01:00
+    description: Sonarqube is an open sourced code quality scanning tool
+    digest: 5ba07b192eaf835b9cb8d80223c5aa1c10e47f24efeed7aac0585d3a53a1ed0e
+    home: https://www.sonarqube.org/
+    icon: https://www.sonarqube.org/assets/logo-31ad3115b1b4b120f3d1efd63e6b13ac9f1f89437f0cf6881cc4d8b5603a52b4.svg
+    keywords:
+    - coverage
+    - security
+    - code
+    - quality
+    maintainers:
+    - email: rjkernick@gmail.com
+      name: rjkernick
+    name: sonarqube
+    sources:
+    - https://github.com/SonarSource/docker-sonarqube
+    urls:
+    - https://raw.githubusercontent.com/niklaushirt/charts/master/charts/repo/stable/sonarqube-0.2.0.tgz
+    version: 0.2.0
+  tomcat:
+  - apiVersion: v1
+    created: 2018-03-19T10:09:00.891563+01:00
+    description: Tomcat for Linux
+    digest: 30045c45c1b544bfd61716f6ccb1c3d4c326c80e80f70d51dc4964e8c32b1b97
+    home: https://hub.docker.com/_/tomcat/
+    icon: http://tomcat.apache.org/images/tomcat.png
+    name: tomcat
+    sources:
+    - https://github.com/docker-library/tomcat
+    urls:
+    - https://raw.githubusercontent.com/niklaushirt/charts/master/charts/repo/stable/tomcat-9.0.tgz
+    version: "9.0"
+  urbancode:
+  - apiVersion: v1
+    created: 2018-03-19T10:09:00.892769+01:00
+    description: A Helm chart for IBM UrbanCode Deploy
+    digest: 7cc3608c5e4b7f7b57a24bf4a4ef5e9973ac13dd5fa163ea771f4fab03414bdf
+    icon: https://github.com/niklaushirt/chartslocal/raw/master/icons/urbancodedeployicon.png
+    maintainers:
+    - email: niklaushirt@gmail.com
+      name: Niklaus Hirt
+    name: urbancode
+    sources:
+    - https://github.com/niklaushirt/chartslocal
+    urls:
+    - https://raw.githubusercontent.com/niklaushirt/charts/master/charts/repo/stable/urbancode-6.2.7.tgz
+    version: 6.2.7
+  wordpress:
+  - appVersion: 4.8.1
+    created: 2018-03-19T10:09:00.893512+01:00
+    description: Web publishing platform for building blogs and websites.
+    digest: 437601e68a16caa7a845116746473e232fa06702651940fca07e134b2ad1f81e
+    engine: gotpl
+    home: http://www.wordpress.com/
+    icon: https://bitnami.com/assets/stacks/wordpress/img/wordpress-stack-220x234.png
+    keywords:
+    - wordpress
+    - cms
+    - blog
+    - http
+    - web
+    - application
+    - php
+    maintainers:
+    - email: containers@bitnami.com
+      name: bitnami-bot
+    name: wordpress
+    sources:
+    - https://github.com/bitnami/bitnami-docker-wordpress
+    urls:
+    - https://raw.githubusercontent.com/niklaushirt/charts/master/charts/repo/stable/wordpress-0.6.10.tgz
+    version: 0.6.10
+generated: 2018-03-19T10:09:00.884965+01:00

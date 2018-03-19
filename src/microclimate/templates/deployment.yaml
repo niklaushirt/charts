@@ -1,0 +1,92 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "name" .}}
+  labels:
+    app: {{ template "name" .}}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: {{ template "name" .}}
+        chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+        release: "{{ .Release.Name }}"
+        heritage: "{{ .Release.Service }}"
+    spec:
+      imagePullSecrets:
+      - name: myregistrykey
+
+      volumes:
+      - name: shared-workspace
+        emptyDir: {} # placeholder
+      - name: docker-socket
+        hostPath:
+          path: /var/run/
+      - name: docker-graph-storage
+        emptyDir: {}
+
+      containers:
+
+      - name: microclimate-orion
+        image: {{ .Values.image.repo.orion}}:{{ .Values.image.tag}}
+        imagePullPolicy: "{{ .Values.image.imagePullPolicy}}"
+        volumeMounts:
+        - name: shared-workspace
+          mountPath: /microclimate-workspace
+        ports:
+          - containerPort: 8888
+        livenessProbe:
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          httpGet:
+            path: /
+            port: 8888
+
+      - name: microclimate-portal
+        image: {{ .Values.image.repo.portal}}:{{ .Values.image.tag}}
+        imagePullPolicy: "{{ .Values.image.imagePullPolicy}}"
+        volumeMounts:
+        - name: shared-workspace
+          mountPath: /microclimate-workspace
+        env:
+          - name: DOCKER_HOST
+            value: tcp://localhost:2375
+        ports:
+        - containerPort: 9090
+        livenessProbe:
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          httpGet:
+            path: /
+            port: 9090
+
+      - name: microclimate-file-watcher
+        image: {{ .Values.image.repo.filewatcher}}:{{ .Values.image.tag}}
+        imagePullPolicy: "{{ .Values.image.imagePullPolicy}}"
+        volumeMounts:
+        - name: shared-workspace
+          mountPath: /microclimate-workspace
+        env:
+          - name: DOCKER_HOST
+            value: tcp://localhost:2375
+        command: ["/scripts/root-watcher.sh", "/microclimate-workspace"]
+
+        # This allows us to run Docker in Docker (DIND)
+        # in the microclimate-file-watcher container.
+      - name: dind-daemon
+        image: docker:1.12.6-dind
+        resources:
+            requests:
+                cpu: 20m
+                memory: 512Mi
+        securityContext:
+            privileged: true
+        volumeMounts:
+          - name: docker-graph-storage
+            mountPath: /var/lib/docker
+          - name: shared-workspace
+            mountPath: /microclimate-workspace
