@@ -22,13 +22,13 @@ image: bitnami/mongodb:3.4.10-r0
 # mongodbDatabase:
 
 ## Kubernetes service type
-serviceType: ClusterIP
+serviceType: NodePort
 
 ## Enable persistence using Persistent Volume Claims
 ## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
 ##
 persistence:
-  enabled: true
+  enabled: false
   ## mongodb data Persistent Volume Storage Class
   ## If defined, storageClassName: <storageClass>
   ## If set to "-", storageClassName: "", which disables dynamic provisioning

@@ -4,16 +4,16 @@
 replicaCount: 3
 name: redis
 image:
-  bootstrap: 
+  bootstrap:
     image: debian
     tag: jessie
   pullPolicy: IfNotPresent
-  redisInstall: 
+  redisInstall:
     image: liuhougangxa/redis-3.2.0
     tag: latest
 service:
   name: redis
-  type: ClusterIP
+  type: NodePort
   containerPort: 6379
   port: 6379
 ## Persist data to a persitent volume
