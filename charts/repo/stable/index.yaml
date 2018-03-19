@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   ghost:
   - appVersion: 0.11.10
-    created: 2018-03-19T10:33:26.045469+01:00
+    created: 2018-03-19T10:41:52.497832+01:00
     description: A simple, powerful publishing platform that allows you to share your
       stories with the world
     digest: 1aea0e3e7c81687d92eb804b18c107250ed87a640e8b72b75751bf874990988f
@@ -28,7 +28,7 @@ entries:
     version: 0.4.15
   jenkins:
   - apiVersion: v1
-    created: 2018-03-19T10:33:26.046355+01:00
+    created: 2018-03-19T10:41:52.500004+01:00
     description: The leading open source automation server, Jenkins provides hundreds
       of plugins to support building, deploying and automating any project.
     digest: cd2a6768aa7cdf609b3ba05d4d66c553e5b599f044de369b5a677ac0784cf61c
@@ -48,7 +48,7 @@ entries:
     version: 2.19.4
   kubernetes-dashboard:
   - appVersion: 1.7.1
-    created: 2018-03-19T10:33:26.046761+01:00
+    created: 2018-03-19T10:41:52.500412+01:00
     description: General-purpose web UI for Kubernetes clusters
     digest: e82e3d9c9a33e225a8c227a236689a378d51d17ee6a10b9e327381ce0c9e72e8
     keywords:
@@ -62,33 +62,27 @@ entries:
     - https://raw.githubusercontent.com/niklaushirt/charts/master/charts/repo/stable/kubernetes-dashboard-0.4.2.tgz
     version: 0.4.2
   mariadb:
-  - appVersion: 10.1.29
-    created: 2018-03-19T10:33:26.047296+01:00
-    description: Fast, reliable, scalable, and easy to use open-source relational
-      database system. MariaDB Server is intended for mission-critical, heavy-load
-      production systems as well as for embedding into mass-deployed software.
-    digest: 34b37272bd36ab8c563afc7b11878680c7dfc2a1742ede81d29eae751ce9a648
+  - created: 2018-03-19T10:41:52.507684+01:00
+    description: MariaDB is developed as open source software and as a relational
+      database it provides an SQL interface for accessing data.
+    digest: 3d3dd4ccf5934bdc25632d2751efcb922784079ab935a07cc17961018c7a8c74
     engine: gotpl
-    home: https://mariadb.org
-    icon: https://bitnami.com/assets/stacks/mariadb/img/mariadb-stack-220x234.png
+    home: https://www.mariadb.org/
     keywords:
     - mariadb
     - mysql
     - database
-    - sql
-    - prometheus
     maintainers:
-    - email: containers@bitnami.com
-      name: bitnami-bot
+    - name: IBM Analytics
     name: mariadb
     sources:
-    - https://github.com/bitnami/bitnami-docker-mariadb
-    - https://github.com/prometheus/mysqld_exporter
+    - https://github.com/IBM/charts/tree/master/stable
+    tillerVersion: '>=2.4.0'
     urls:
-    - https://raw.githubusercontent.com/niklaushirt/charts/master/charts/repo/stable/mariadb-2.1.1.tgz
-    version: 2.1.1
+    - https://raw.githubusercontent.com/niklaushirt/charts/master/charts/repo/stable/mariadb-1.1.2.tgz
+    version: 1.1.2
   microclimate:
-  - created: 2018-03-19T10:33:26.047697+01:00
+  - created: 2018-03-19T10:41:52.508037+01:00
     description: Environment for end to end development, from code generation to cloud
       deployment.
     digest: 1e986494637b76dd1f4bcaef632baed8039596d85c9e7788cd09568fa39f8590
@@ -99,7 +93,7 @@ entries:
     version: 0.1.0-beta
   mongodb:
   - appVersion: 3.4.10
-    created: 2018-03-19T10:33:26.048096+01:00
+    created: 2018-03-19T10:41:52.508425+01:00
     description: NoSQL document-oriented database that stores JSON-like documents
       with dynamic schemas, simplifying the integration of data in content-driven
       applications.
@@ -122,7 +116,7 @@ entries:
     version: 0.4.18
   mqadvanceddev:
   - apiVersion: v1
-    created: 2018-03-19T10:33:26.049334+01:00
+    created: 2018-03-19T10:41:52.509743+01:00
     description: IBM MQ queue manager
     digest: ab30bc1c050b0b4941e0cb233d6019ea8abcf1f9a242a8bfd1e2fea645f45e2e
     icon: https://developer.ibm.com/messaging/wp-content/uploads/sites/18/2017/07/IBM-MQ-Square-200.png
@@ -134,7 +128,7 @@ entries:
     - https://raw.githubusercontent.com/niklaushirt/charts/master/charts/repo/stable/mqadvanceddev-1.0.2.tgz
     version: 1.0.2
   nginx:
-  - created: 2018-03-19T10:33:26.049663+01:00
+  - created: 2018-03-19T10:41:52.510067+01:00
     description: Nginx for Linux
     digest: 0d1c565930c844dcc1c6fbfaa4abbfe175964134969e40985e16c88306757d97
     home: https://github.com/kubernetes/helm
@@ -155,7 +149,7 @@ entries:
     version: 1.8.1
   nodered:
   - apiVersion: v1
-    created: 2018-03-19T10:33:26.049987+01:00
+    created: 2018-03-19T10:41:52.510425+01:00
     description: A Helm chart for NodeRed
     digest: 40c2048445d8a6d6e76ddea009c808e902581d278393dfaf1f926444a4534e4a
     icon: https://github.com/niklaushirt/chartslocal/raw/master/icons/noderedicon.png
@@ -169,7 +163,7 @@ entries:
     - https://raw.githubusercontent.com/niklaushirt/charts/master/charts/repo/stable/nodered-0.17.5.tgz
     version: 0.17.5
   redis:
-  - created: 2018-03-19T10:33:26.050285+01:00
+  - created: 2018-03-19T10:41:52.510751+01:00
     description: Redis for Linux
     digest: 57f77b585eb05748a6fe3a1c139dfe47703e06f5ae4a7e547266969873370c9f
     home: https://github.com/redis
@@ -185,7 +179,7 @@ entries:
     version: 3.2.0
   sonarqube:
   - appVersion: "6.5"
-    created: 2018-03-19T10:33:26.051449+01:00
+    created: 2018-03-19T10:41:52.512476+01:00
     description: Sonarqube is an open sourced code quality scanning tool
     digest: 5ba07b192eaf835b9cb8d80223c5aa1c10e47f24efeed7aac0585d3a53a1ed0e
     home: https://www.sonarqube.org/
@@ -206,7 +200,7 @@ entries:
     version: 0.2.0
   tomcat:
   - apiVersion: v1
-    created: 2018-03-19T10:33:26.052084+01:00
+    created: 2018-03-19T10:41:52.512759+01:00
     description: Tomcat for Linux
     digest: 30045c45c1b544bfd61716f6ccb1c3d4c326c80e80f70d51dc4964e8c32b1b97
     home: https://hub.docker.com/_/tomcat/
@@ -219,7 +213,7 @@ entries:
     version: "9.0"
   urbancode:
   - apiVersion: v1
-    created: 2018-03-19T10:33:26.052479+01:00
+    created: 2018-03-19T10:41:52.513052+01:00
     description: A Helm chart for IBM UrbanCode Deploy
     digest: 7cc3608c5e4b7f7b57a24bf4a4ef5e9973ac13dd5fa163ea771f4fab03414bdf
     icon: https://github.com/niklaushirt/chartslocal/raw/master/icons/urbancodedeployicon.png
@@ -234,7 +228,7 @@ entries:
     version: 6.2.7
   wordpress:
   - appVersion: 4.8.1
-    created: 2018-03-19T10:33:26.053248+01:00
+    created: 2018-03-19T10:41:52.514084+01:00
     description: Web publishing platform for building blogs and websites.
     digest: 437601e68a16caa7a845116746473e232fa06702651940fca07e134b2ad1f81e
     engine: gotpl
@@ -257,4 +251,4 @@ entries:
     urls:
     - https://raw.githubusercontent.com/niklaushirt/charts/master/charts/repo/stable/wordpress-0.6.10.tgz
     version: 0.6.10
-generated: 2018-03-19T10:33:26.043477+01:00
+generated: 2018-03-19T10:41:52.49589+01:00

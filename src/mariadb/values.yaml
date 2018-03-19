@@ -1,94 +1,73 @@
-## Bitnami MariaDB image version
-## ref: https://hub.docker.com/r/bitnami/mariadb/tags/
-##
-## Default: none
-image: bitnami/mariadb:10.1.29-r1
+###############################################################################
+############################ PostgreSQL #######################################
+###############################################################################
 
-## Specify an imagePullPolicy (Required)
-## It's recommended to change this to 'Always' if the image tag is 'latest'
-## ref: http://kubernetes.io/docs/user-guide/images/#updating-images
-imagePullPolicy: IfNotPresent
+###############################################################################
+## Common image variables
+###############################################################################
 
-## Use password authentication
-usePassword: true
+## Architecture - e.g. amd64, s390x, ppc64le. Specific worker node architecture
+## to deploy to.
+## You can use kubectl version command to determine the architecture on the
+## desired worker node.
 
-## Specify password for root user
-## Defaults to a random 10-character alphanumeric string if not set and usePassword is true
-## ref: https://github.com/bitnami/bitnami-docker-mariadb/blob/master/README.md#setting-the-root-password-on-first-run
-##
-mariadbRootPassword: root
+# Specify architecture (amd64, ppc64le, s390x) and weight to be  used for scheduling as follows :
+#   0 - Do not use
+#   1 - Least preferred
+#   2 - No preference
+#   3 - Most preferred
+arch:
+  amd64: "2 - No preference"
+  ppc64le: "2 - No preference"
+  s390x: "2 - No preference"
+image:
+  repository: ibmcom/mariadb
+  tag: 10.2.10
+  pullPolicy: IfNotPresent
 
-## Create a database user
-## Password defaults to a random 10-character alphanumeric string if not set and usePassword is true
-## ref: https://github.com/bitnami/bitnami-docker-mariadb/blob/master/README.md#creating-a-database-user-on-first-run
-##
-mariadbUser: demo
-mariadbPassword: demo
+###############################################################################
+## Persistence Storage
+###############################################################################
 
-## Create a database
-## ref: https://github.com/bitnami/bitnami-docker-mariadb/blob/master/README.md#creating-a-database-on-first-run
-##
-# mariadbDatabase:
-
-
-service:
-  ## Kubernetes service type
-  type: NodePort
-
-  ## Specify the nodePort value for the LoadBalancer and NodePort service types.
-  ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport
-  ##
-  nodePort: 31987
-
-  ## Provide any additonal annotations which may be required. This can be used to
-  ## set the LoadBalancer service type to internal only.
-  ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#internal-load-balancer
-  ##
-  # annotations:
-
-## Enable persistence using Persistent Volume Claims
-## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
-##
+## Persistence enabled by default
+## global persistence settings
 persistence:
   enabled: false
+  useDynamicProvisioning: false
 
-  ## A manually managed Persistent Volume and Claim
-  ## Requires persistence.enabled: true
-  ## If defined, PVC must be created manually before volume will be bound
-  # existingClaim:
+dataVolume:
+  name: "data-stor"
 
-  ## mariadb data Persistent Volume Storage Class
-  ## If defined, storageClassName: <storageClass>
-  ## If set to "-", storageClassName: "", which disables dynamic provisioning
-  ## If undefined (the default) or set to null, no storageClassName spec is
-  ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
-  ##   GKE, AWS & OpenStack)
-  ##
-  # storageClass: "-"
-  accessMode: ReadWriteOnce
-  size: 8Gi
+  ## Specify the name of the Existing Claim to be used by your application
+  ## empty string means don't use an existClaim
+  existingClaimName: ""
 
-## Configure MariaDB with a custom my.cnf file
-## ref: https://mariadb.com/kb/en/mariadb/configuring-mariadb-with-mycnf/#example-of-configuration-file
-##
-# config: |-
-#   [mysqld]
-#   innodb_buffer_pool_size=2G
-
-metrics:
-  enabled: false
-  image: prom/mysqld-exporter
-  imageTag: v0.10.0
-  imagePullPolicy: IfNotPresent
-  resources: {}
-  annotations:
-    prometheus.io/scrape: "true"
-    prometheus.io/port: "9104"
+  ## Specify the name of the StorageClass
+  ## empty string means don't use a StorageClass
+  storageClassName: ""
+  accessModes: ReadWriteOnce
+  size: 20Gi
 
 ## Configure resource requests and limits
 ## ref: http://kubernetes.io/docs/user-guide/compute-resources/
 ##
 resources:
   requests:
-    memory: 256Mi
-    cpu: 250m
+    memory: 2Gi
+    cpu: 2000m
+  limits:
+    memory: 16Gi
+    cpu: 16000m
+
+service:
+  name: mariadb
+  type: NodePort
+  port: 3306
+
+## Database access attributes - empty value will be
+## overriden with default
+database:
+  user: ""
+  password: ""
+  name: ""
+  dbcmd: ""
