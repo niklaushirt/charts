@@ -78,7 +78,7 @@ devops:
 
 service:
   name: devops
-  type: ClusterIP
+  type: NodePort
   externalPort: 9191
   internalPort: 9191
 
