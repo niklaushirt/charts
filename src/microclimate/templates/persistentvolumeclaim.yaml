@@ -8,24 +8,25 @@
 # restricted by GSA ADP Schedule Contract with IBM Corp.
 #*******************************************************************************
 
+{{- if and .Values.persistence.enabled (not .Values.persistence.existingClaimName) }}
 apiVersion: v1
-kind: Service
+kind: PersistentVolumeClaim
 metadata:
-  name: {{ template "fullname" . }}
+  name: {{ template "fullname" .}}
   labels:
-    app: {{ template "fullname" . }}
+    app: {{ template "fullname" .}}
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
 spec:
-  type: NodePort
-  ports:
-    - port: {{ .Values.ports.theia }}
-      name: theia-http
-    - port: {{ .Values.ports.portal }}
-      name: portal-http
-    - port: {{ .Values.ports.filewatcher }}
-      name: file-watcher-http
-  selector:
-    app: {{ template "fullname" . }}
-    release: {{ .Release.Name }}
+  {{- if .Values.persistence.useDynamicProvisioning }}
+  storageClassName: {{ default nil .Values.persistence.storageClassName | quote }}
+  {{- else }}
+  storageClassName: {{ default "" .Values.persistence.storageClassName | quote }}
+  {{- end }}
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ .Values.persistence.size | quote }}
+{{- end }}

@@ -9,6 +9,7 @@
 #*******************************************************************************
 
 name: microclimate
-version: 0.1.0-beta
-description: Environment for end to end development, from code generation to cloud deployment.
-tillerVersion: ">=2.4.0"
+version: 1.0.0
+description: End to end development environment for rapidly creating, developing and deploying applications.
+tillerVersion: ">=2.6.0"
+appVersion: 18.03

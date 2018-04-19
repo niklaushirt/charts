@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.repository_ucds: ibmcom/ucds
 
 # Version  for UrbanCode Deploy Server
-tag: latest
+tag: 6.2.7.1.960481
 
 #Number of replicas for UrbanCode Deploy Server
 replicaCount_Agent: 1
