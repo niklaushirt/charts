@@ -24,6 +24,7 @@ helm package sonarqube
 helm package tomcat
 helm package urbancode
 helm package wordpress
+helm package velocity
 
 
 #CREATE INDEX.YAML
