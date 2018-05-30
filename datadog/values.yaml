@@ -1,10 +1,7 @@
 # Default values for datadog.
 image:
-  # This chart is compatible with different images, please choose one
-  repository: datadog/agent               # Agent6
-  # repository: datadog/dogstatsd         # Standalone DogStatsD6
-  # repository: datadog/docker-dd-agent   # Agent5
-  tag: 6.2.0  # Use 6.2.0-jmx to enable jmx fetch collection
+  repository: datadog/docker-dd-agent
+  tag: latest
   pullPolicy: IfNotPresent
 
 # NB! Normally you need to keep Datadog DaemonSet enabled!
@@ -15,19 +12,6 @@ image:
 # get guaranteed delivery of the metrics in Datadog-per-namespace setup!
 daemonset:
   enabled: true
-  ## Bind ports on the hostNetwork. Useful for CNI networking where hostPort might
-  ## not be supported. The ports will need to be available on all hosts. Can be
-  ## used for custom metrics instead of a service endpoint.
-  ## WARNING: Make sure that hosts using this are properly firewalled otherwise
-  ## metrics and traces will be accepted from any host able to connect to this host.
-  # useHostNetwork: true
-
-  ## Sets the hostPort to the same value of the container port. Can be used as
-  ## for sending custom metrics. The ports will need to be available on all
-  ## hosts.
-  ## WARNING: Make sure that hosts using this are properly firewalled otherwise
-  ## metrics and traces will be accepted from any host able to connect to this host.
-  # useHostPort: true
 
   ## Annotations to add to the DaemonSet's Pods
   # podAnnotations:
@@ -51,8 +35,7 @@ deployment:
 ## deploy the kube-state-metrics deployment
 ## ref: https://github.com/kubernetes/charts/tree/master/stable/kube-state-metrics
 ##
-kubeStateMetrics:
-  enabled: true
+kubeStateMetrics.enabled: true
 
 datadog:
   ## You'll need to set this to your Datadog API key before the agent will run.
@@ -66,8 +49,6 @@ datadog:
 
   ## Set logging verbosity.
   ## ref: https://github.com/DataDog/docker-dd-agent#environment-variables
-  ## Note: For Agent6 (image `datadog/agent`) the valid log levels are
-  ## trace, debug, info, warn, error, critical, and off
   ##
   logLevel: WARNING
 
@@ -84,7 +65,7 @@ datadog:
   ## Enables event collection from the kubernetes API
   ## ref: https://github.com/DataDog/docker-dd-agent#environment-variables
   ##
-  collectEvents: false
+  collectEvents: False
 
   ## Un-comment this to enable APM and tracing, on ports 7777 and 8126
   ## ref: https://github.com/DataDog/docker-dd-agent#tracing-from-the-host
@@ -98,41 +79,19 @@ datadog:
   #   - name:
   #     value:
 
-  ## The dd-agent supports detailed process and container monitoring and
-  ## requires control over the volume and volumeMounts for the daemonset
-  ## or deployment.
-  ## ref: https://docs.datadoghq.com/guides/process/
-  ##
-  # volumes:
-  #  - hostPath:
-  #      path: /etc/passwd
-  #    name: passwd
-  # volumeMounts:
-  #   - name: passwd
-  #     mountPath: /etc/passwd
-  #     readOnly: true
-
-  ## Enable leader election mechanism for event collection
-  ##
-  leaderElection: false
-
-  ## Set the lease time for leader election
-  ##
-  # leaderLeaseDuration: 600
-
-  ## Provide additional service definitions
+  ## Provide additonal service definitions
   ## Each key will become a file in /conf.d/auto_conf
   ## ref: https://github.com/DataDog/docker-dd-agent#configuration-files
   ##
-  # autoconf:
-  #   kubernetes_state.yaml: |-
-  #     docker_images:
-  #       - kube-state-metrics
-  #     init_config:
-  #     instances:
-  #       - kube_state_url: http://%%host%%:%%port%%/metrics
+  autoconf:
+    kubernetes_state.yaml: |-
+      docker_images:
+        - kube-state-metrics
+      init_config:
+      instances:
+        - kube_state_url: http://%%host%%:%%port%%/metrics
 
-  ## Provide additional service definitions
+  ## Provide additonal service definitions
   ## Each key will become a file in /conf.d
   ## ref: https://github.com/DataDog/docker-dd-agent#configuration-files
   ##
@@ -143,7 +102,7 @@ datadog:
   #       - host: "name"
   #         port: "6379"
 
-  ## Provide additional service checks
+  ## Provide additonal service checks
   ## Each key will become a file in /checks.d
   ## ref: https://github.com/DataDog/docker-dd-agent#configuration-files
   ##
@@ -160,19 +119,3 @@ datadog:
     limits:
       cpu: 256m
       memory: 512Mi
-
-rbac:
-  ## If true, create & use RBAC resources
-  create: true
-
-  ## Ignored if rbac.create is true
-  serviceAccountName: default
-
-tolerations: []
-
-kube-state-metrics:
-  rbac:
-    create: true
-
-    ## Ignored if rbac.create is true
-    serviceAccountName: default

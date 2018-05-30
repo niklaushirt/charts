@@ -1,12 +1,10 @@
 # Where defaults exist, the values are set to them here.
 # Values with no preferred or common defaults are set to empty strings.
-global:
-  # global.image: the image that will be used for this release
-  image:
-    repository: weaveworks/scope
-    tag: "1.9.0"
+image:
+  repository: weaveworks/scope
+  tag: "1.9.0"
     # global.image.pullPolicy: must be Always, IfNotPresent, or Never
-    pullPolicy: "IfNotPresent"
+  pullPolicy: "IfNotPresent"
   # global.service.*: the configuration of the service used to access the frontend
-  service:
-    type: "NodePort"
+service:
+  type: "NodePort"
