@@ -31,7 +31,7 @@ daemonset:
 deployment:
   enabled: false
   replicas: 1
- 
+
 ## deploy the kube-state-metrics deployment
 ## ref: https://github.com/kubernetes/charts/tree/master/stable/kube-state-metrics
 ##
@@ -41,7 +41,7 @@ datadog:
   ## You'll need to set this to your Datadog API key before the agent will run.
   ## ref: https://app.datadoghq.com/account/settings#agent/kubernetes
   ##
-  # apiKey:
+  apiKey: ef2835c87595a432cegdsc07210c4f5056de
 
   ## dd-agent container name
   ##
