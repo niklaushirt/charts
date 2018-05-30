@@ -2,18 +2,18 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
-    application: kube-ops-view-redis
+    application: {{ template "fullname" . }}-redis
     version: v0.0.1
-  name: kube-ops-view-redis
+  name: {{ template "fullname" . }}-redis
 spec:
   replicas: 1
   selector:
     matchLabels:
-      application: kube-ops-view-redis
+      application: {{ template "fullname" . }}-redis
   template:
     metadata:
       labels:
-        application: kube-ops-view-redis
+        application: {{ template "fullname" . }}-redis
         version: v0.0.1
     spec:
       containers:
