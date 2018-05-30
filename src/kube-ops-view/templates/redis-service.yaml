@@ -3,7 +3,7 @@ kind: Service
 metadata:
   labels:
     application: {{ template "fullname" . }}-redis
-  name: k{{ template "fullname" . }}-redis
+  name: {{ template "fullname" . }}-redis
 spec:
   selector:
     application: {{ template "fullname" . }}-redis
