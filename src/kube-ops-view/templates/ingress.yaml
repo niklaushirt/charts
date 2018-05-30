@@ -1,10 +1,10 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: kube-ops-view
+  name: {{ template "fullname" . }}
 spec:
   rules:
-  - host: "kube-ops-view.example.org"
+  - host: {{ .Values.ingress.hostname }}
     http:
       paths:
       - backend:

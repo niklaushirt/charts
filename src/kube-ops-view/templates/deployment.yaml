@@ -4,23 +4,24 @@ metadata:
   labels:
     application: kube-ops-view
     version: v0.8.1
-  name: kube-ops-view
+  name: {{ template "fullname" . }}
 spec:
-  replicas: 1
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      application: kube-ops-view
+      application: {{ template "fullname" . }}
   template:
     metadata:
       labels:
-        application: kube-ops-view
+        application: {{ template "fullname" . }}
         version: v0.8.1
     spec:
-      serviceAccount: kube-ops-view
+      serviceAccount: {{ template "fullname" . }}
       containers:
       - name: service
         # see https://github.com/hjacobs/kube-ops-view/releases
-        image: hjacobs/kube-ops-view:0.8.1
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
         args:
         # remove this option to use built-in memory store
         - --redis-url=redis://kube-ops-view-redis:6379
