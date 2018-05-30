@@ -26,6 +26,14 @@ helm package urbancode
 helm package wordpress
 helm package velocity
 
+helm package artifactory
+helm package datadog
+helm package gitlab-ce
+helm package kube-ops-view
+helm package moodle
+helm package weave-cloud
+
+
 
 #CREATE INDEX.YAML
 helm repo index --url https://raw.githubusercontent.com/niklaushirt/charts/master/charts/repo/stable/ ./

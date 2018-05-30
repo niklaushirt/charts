@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 
 # Version  for Node Red
-tag: 0.18.4
+tag: 0.18.5
 
 #Name and Size for PV
 persistentVolumeClaim: "nodered-pv-claim"

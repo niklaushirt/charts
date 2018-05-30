@@ -1,0 +1,13 @@
+name: gitlab-ce
+description: GitLab CE release
+home: http://gitlab.com
+icon: https://docs.gitlab.com/assets/images/gitlab-logo.svg
+keywords:
+- git
+- gitlab
+maintainers:
+- email: zhiweik@gmail.com
+  name: Zhiwei
+sources:
+- https://hub.docker.com/r/gitlab/gitlab-ce
+version: 9.3.8-ce.0
