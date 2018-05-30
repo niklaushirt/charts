@@ -26,12 +26,10 @@ helm package urbancode
 helm package wordpress
 helm package velocity
 
-helm package artifactory
 helm package datadog
 helm package gitlab-ce
 helm package kube-ops-view
-helm package moodle
-helm package weave-cloud
+helm package weave-scope
 
 
 

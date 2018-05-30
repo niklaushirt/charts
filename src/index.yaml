@@ -1,31 +1,7 @@
 apiVersion: v1
 entries:
-  artifactory:
-  - apiVersion: v1
-    appVersion: 5.4.6
-    created: 2018-05-30T15:46:42.505847+02:00
-    description: Universal Repository Manager supporting all major packaging formats,
-      build tools and CI servers.
-    digest: 5d170af0ac4e9de2ed20c29f3a6bc45ac500abb15e28663267c39f45f0fd1bb0
-    home: https://www.jfrog.com/artifactory/
-    icon: https://raw.githubusercontent.com/JFrogDev/artifactory-dcos/master/images/jfrog_med.png
-    keywords:
-    - artifactory
-    - jfrog
-    maintainers:
-    - email: jainishs@jfrog.com
-      name: jainishshah17
-    - email: eldada@jfrog.com
-      name: eldada
-    name: artifactory
-    sources:
-    - https://bintray.com/jfrog/product/JFrog-Artifactory-Pro/view
-    - https://github.com/JFrogDev
-    urls:
-    - https://raw.githubusercontent.com/niklaushirt/charts/master/charts/repo/stable/artifactory-5.4.6-2.tgz
-    version: 5.4.6-2
   datadog:
-  - created: 2018-05-30T15:46:42.506519+02:00
+  - created: 2018-05-30T16:01:50.053031+02:00
     description: DataDog Agent
     digest: 09a3c327a81b0dbd107d62dbabc564bffd5a96fc4453c166ca68c56e4232a6ec
     home: https://www.datadoghq.com
@@ -48,7 +24,7 @@ entries:
     version: 0.7.2
   ghost:
   - appVersion: 0.11.10
-    created: 2018-05-30T15:46:42.507405+02:00
+    created: 2018-05-30T16:01:50.053975+02:00
     description: A simple, powerful publishing platform that allows you to share your
       stories with the world
     digest: 1aea0e3e7c81687d92eb804b18c107250ed87a640e8b72b75751bf874990988f
@@ -73,7 +49,7 @@ entries:
     - https://raw.githubusercontent.com/niklaushirt/charts/master/charts/repo/stable/ghost-0.4.15.tgz
     version: 0.4.15
   gitlab-ce:
-  - created: 2018-05-30T15:46:42.507687+02:00
+  - created: 2018-05-30T16:01:50.054387+02:00
     description: GitLab CE release
     digest: 1e023b20e615b8fd937f5ef58a0765e64f418852a13c30393ef0e050ccaa85ee
     home: http://gitlab.com
@@ -92,7 +68,7 @@ entries:
     version: 9.3.8-ce.0
   jenkins:
   - appVersion: "2.73"
-    created: 2018-05-30T15:46:42.508633+02:00
+    created: 2018-05-30T16:01:50.0557+02:00
     description: Open source continuous integration server. It supports multiple SCM
       tools including CVS, Subversion and Git. It can execute Apache Ant and Apache
       Maven-based projects as well as arbitrary scripts.
@@ -112,7 +88,7 @@ entries:
     - https://raw.githubusercontent.com/niklaushirt/charts/master/charts/repo/stable/jenkins-0.14.2.tgz
     version: 0.14.2
   kube-ops-view:
-  - created: 2018-05-30T15:46:42.508992+02:00
+  - created: 2018-05-30T16:01:50.056091+02:00
     description: Kubernetes Operational View - read-only system dashboard for multiple
       K8s clusters
     digest: 2479f1b40fd941a71f01c3946757e83d34d3ec6593ddfc39e652fc00285ee03e
@@ -133,7 +109,7 @@ entries:
     version: 0.3.0
   kubernetes-dashboard:
   - appVersion: 1.7.1
-    created: 2018-05-30T15:46:42.509366+02:00
+    created: 2018-05-30T16:01:50.05659+02:00
     description: General-purpose web UI for Kubernetes clusters
     digest: bf5b44c94dc53acd00a52d694da6b18f5ddc6e4d69a7fccdc11ddbaf45fc429b
     keywords:
@@ -147,7 +123,7 @@ entries:
     - https://raw.githubusercontent.com/niklaushirt/charts/master/charts/repo/stable/kubernetes-dashboard-0.4.2.tgz
     version: 0.4.2
   mariadb:
-  - created: 2018-05-30T15:46:42.516704+02:00
+  - created: 2018-05-30T16:01:50.065388+02:00
     description: MariaDB is developed as open source software and as a relational
       database it provides an SQL interface for accessing data.
     digest: 81a4c1a6a17b16192b91baf167376114478f4a7a56ca6ad5a641f05fb913deb7
@@ -168,7 +144,7 @@ entries:
     version: 1.1.2
   microclimate:
   - appVersion: "18.03"
-    created: 2018-05-30T15:46:42.518822+02:00
+    created: 2018-05-30T16:01:50.068529+02:00
     description: End to end development environment for rapidly creating, developing
       and deploying applications.
     digest: 06c82b79e667d05da2c0deb83b06744ade171c58d99eec7a1c8642326b457165
@@ -179,7 +155,7 @@ entries:
     version: 1.0.0
   mongodb:
   - appVersion: 3.4.10
-    created: 2018-05-30T15:46:42.519227+02:00
+    created: 2018-05-30T16:01:50.069009+02:00
     description: NoSQL document-oriented database that stores JSON-like documents
       with dynamic schemas, simplifying the integration of data in content-driven
       applications.
@@ -200,32 +176,9 @@ entries:
     urls:
     - https://raw.githubusercontent.com/niklaushirt/charts/master/charts/repo/stable/mongodb-0.4.18.tgz
     version: 0.4.18
-  moodle:
-  - appVersion: 3.3.1
-    created: 2018-05-30T15:46:42.520312+02:00
-    description: Moodle is a learning platform designed to provide educators, administrators
-      and learners with a single robust, secure and integrated system to create personalised
-      learning environments
-    digest: 47c1b1cfdbb695d897e2184a01f38b7aa7ac64581477e75830571dc6cdca56a4
-    engine: gotpl
-    home: http://www.moodle.org/
-    icon: https://bitnami.com/assets/stacks/moodle/img/moodle-stack-110x117.png
-    keywords:
-    - moodle
-    - learning
-    - php
-    maintainers:
-    - email: containers@bitnami.com
-      name: Bitnami
-    name: moodle
-    sources:
-    - https://github.com/bitnami/bitnami-docker-moodle
-    urls:
-    - https://raw.githubusercontent.com/niklaushirt/charts/master/charts/repo/stable/moodle-0.2.2.tgz
-    version: 0.2.2
   mqadvanceddev:
   - apiVersion: v1
-    created: 2018-05-30T15:46:42.521558+02:00
+    created: 2018-05-30T16:01:50.070663+02:00
     description: IBM MQ queue manager
     digest: ab30bc1c050b0b4941e0cb233d6019ea8abcf1f9a242a8bfd1e2fea645f45e2e
     icon: https://developer.ibm.com/messaging/wp-content/uploads/sites/18/2017/07/IBM-MQ-Square-200.png
@@ -237,7 +190,7 @@ entries:
     - https://raw.githubusercontent.com/niklaushirt/charts/master/charts/repo/stable/mqadvanceddev-1.0.2.tgz
     version: 1.0.2
   nginx:
-  - created: 2018-05-30T15:46:42.5218+02:00
+  - created: 2018-05-30T16:01:50.07109+02:00
     description: Nginx for Linux
     digest: 0d1c565930c844dcc1c6fbfaa4abbfe175964134969e40985e16c88306757d97
     home: https://github.com/kubernetes/helm
@@ -258,7 +211,7 @@ entries:
     version: 1.8.1
   nodered:
   - apiVersion: v1
-    created: 2018-05-30T15:46:42.522088+02:00
+    created: 2018-05-30T16:01:50.071434+02:00
     description: A Helm chart for NodeRed
     digest: f577a43b2c030563835ab5d42c1e44af1a7dd36c0b6b2e60ed772f066b6ee180
     icon: https://github.com/niklaushirt/chartslocal/raw/master/icons/noderedicon.png
@@ -272,7 +225,7 @@ entries:
     - https://raw.githubusercontent.com/niklaushirt/charts/master/charts/repo/stable/nodered-0.17.5.tgz
     version: 0.17.5
   redis:
-  - created: 2018-05-30T15:46:42.522347+02:00
+  - created: 2018-05-30T16:01:50.071762+02:00
     description: Redis for Linux
     digest: 3e2a39df868fc1f1b9dc3c707cfce7b825ff008d748da2aa4aff37cc261cb914
     home: https://github.com/redis
@@ -288,7 +241,7 @@ entries:
     version: 3.2.0
   sonarqube:
   - appVersion: "6.5"
-    created: 2018-05-30T15:46:42.523188+02:00
+    created: 2018-05-30T16:01:50.072939+02:00
     description: Sonarqube is an open sourced code quality scanning tool
     digest: 7f566d1492d130b31652d0c6e4b3541892bdc30ea50ae4694ccf5a96cacc2db0
     home: https://www.sonarqube.org/
@@ -309,7 +262,7 @@ entries:
     version: 0.2.0
   tomcat:
   - apiVersion: v1
-    created: 2018-05-30T15:46:42.523436+02:00
+    created: 2018-05-30T16:01:50.073232+02:00
     description: Tomcat for Linux
     digest: 30045c45c1b544bfd61716f6ccb1c3d4c326c80e80f70d51dc4964e8c32b1b97
     home: https://hub.docker.com/_/tomcat/
@@ -322,7 +275,7 @@ entries:
     version: "9.0"
   urbancode:
   - apiVersion: v1
-    created: 2018-05-30T15:46:42.523704+02:00
+    created: 2018-05-30T16:01:50.073591+02:00
     description: A Helm chart for IBM UrbanCode Deploy
     digest: 88db88516050c395ee0e9244a82c1bd98b50f97578f1192c6f9f3c522733ff65
     icon: https://github.com/niklaushirt/chartslocal/raw/master/icons/urbancodedeployicon.png
@@ -337,31 +290,36 @@ entries:
     version: 6.2.7
   velocity:
   - apiVersion: v1
-    created: 2018-05-30T15:46:42.524091+02:00
+    created: 2018-05-30T16:01:50.074107+02:00
     description: Deploys UrbanCode Velocity
     digest: f33e68b6e259b8e558fae3bf096178b7d131120fea05accb93c3d12f0d7435d4
     name: velocity
     urls:
     - https://raw.githubusercontent.com/niklaushirt/charts/master/charts/repo/stable/velocity-1.0.0.tgz
     version: 1.0.0
-  weave-cloud:
-  - created: 2018-05-30T15:46:42.524504+02:00
-    description: |
-      Weave Cloud is a add-on to Kubernetes which provides Continuous Delivery, along with hosted Prometheus Monitoring and a visual dashboard for exploring & debugging microservices
-    digest: f4537ede9ac2ab413e4d4a62f8f49a3cb2e97e95fd54be4a2bacc387e0b10a16
-    engine: gotpl
-    home: https://weave.works
-    icon: https://www.weave.works/assets/images/bltd108e8f850ae9e7c/weave-logo-512.png
+  weave-scope:
+  - appVersion: 1.6.5
+    created: 2018-05-30T16:01:50.075311+02:00
+    description: A Helm chart for the Weave Scope cluster visualizer.
+    digest: 13358a94004a6c6cd1ccd6c652edf0c51fc813b9f064e159e6204633ac2a6ce9
+    home: https://www.weave.works/oss/scope/
+    icon: https://avatars1.githubusercontent.com/u/9976052?s=64
+    keywords:
+    - containers
+    - dashboard
+    - monitoring
     maintainers:
-    - email: ilya@weave.works
-      name: Ilya Dmitrichenko
-    name: weave-cloud
+    - email: github@orion-com.com
+      name: omkensey
+    name: weave-scope
+    sources:
+    - https://github.com/weaveworks/scope
     urls:
-    - https://raw.githubusercontent.com/niklaushirt/charts/master/charts/repo/stable/weave-cloud-0.1.1.tgz
-    version: 0.1.1
+    - https://raw.githubusercontent.com/niklaushirt/charts/master/charts/repo/stable/weave-scope-0.9.2.tgz
+    version: 0.9.2
   wordpress:
   - appVersion: 4.8.1
-    created: 2018-05-30T15:46:42.525614+02:00
+    created: 2018-05-30T16:01:50.076768+02:00
     description: Web publishing platform for building blogs and websites.
     digest: 437601e68a16caa7a845116746473e232fa06702651940fca07e134b2ad1f81e
     engine: gotpl
@@ -384,4 +342,4 @@ entries:
     urls:
     - https://raw.githubusercontent.com/niklaushirt/charts/master/charts/repo/stable/wordpress-0.6.10.tgz
     version: 0.6.10
-generated: 2018-05-30T15:46:42.505094+02:00
+generated: 2018-05-30T16:01:50.051514+02:00
