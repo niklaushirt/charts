@@ -1,29 +1,43 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: {{ template "fullname" . }}
   labels:
-    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    application: kube-ops-view
+    version: v0.8.1
+  name: {{ template "fullname" . }}
 spec:
   replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      application: {{ template "fullname" . }}
   template:
     metadata:
       labels:
-        app: {{ template "fullname" . }}
+        application: {{ template "fullname" . }}
+        version: v0.8.1
     spec:
+      serviceAccount: {{ template "fullname" . }}
       containers:
-      - name: {{ .Chart.Name }}
+      - name: service
+        # see https://github.com/hjacobs/kube-ops-view/releases
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
+        args:
+        # remove this option to use built-in memory store
+        - --redis-url=redis://kube-ops-view-redis:6379
         ports:
-        - containerPort: {{ .Values.service.internalPort }}
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: {{ .Values.service.internalPort }}
+        - containerPort: 8080
+          protocol: TCP
         readinessProbe:
           httpGet:
             path: /health
-            port: {{ .Values.service.internalPort }}
+            port: 8080
+          initialDelaySeconds: 5
+          timeoutSeconds: 1
         resources:
-{{ toYaml .Values.resources | indent 12 }}
+          limits:
+            cpu: 200m
+            memory: 100Mi
+          requests:
+            cpu: 50m
+            memory: 50Mi
