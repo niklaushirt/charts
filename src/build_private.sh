@@ -30,7 +30,7 @@ helm package datadog
 helm package gitlab-ce
 helm package kube-ops-view
 helm package weave-scope
-
+helm package openwhisk
 
 
 #CREATE INDEX.YAML

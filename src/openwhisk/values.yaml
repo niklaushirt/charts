@@ -1,0 +1,118 @@
+# Licensed to the Apache Software Foundation (ASF) under one or more contributor
+# license agreements; and to You under the Apache License, Version 2.0.
+
+# Default values for OpenWhisk.
+
+# Overall system configuration
+whisk:
+  ingress:
+    name: "ow-ingress"
+    # You _MUST_ provide a value for whisk.ingress.api_host when deploying the chart
+    api_host: nil
+  # Production deployments _MUST_ override these default auth values
+  auth:
+    system: "789c46b1-71f6-4ed5-8c54-816aa4f8c502:abczO3xZCLrMN6v2BKK1dXYFpXlPkccOFqm12CdAsMgRU4VrNZ9lyGVCGuMDGIwP"
+    guest: "23bc46b1-71f6-4ed5-8c54-816aa4f8c502:123zO3xZCLrMN6v2BKK1dXYFpXlPkccOFqm12CdAsMgRU4VrNZ9lyGVCGuMDGIwP"
+  versions:
+    cli: "latest"
+  systemNameSpace: "/whisk.system"
+  runtimes: "runtimes.json"
+
+# zookeeper configurations
+zookeeper:
+  name: "zookeeper"
+  image: "zookeeper:3.4"
+  replicaCount: 1
+  imagePullPolicy: "IfNotPresent"
+  restartPolicy: "Always"
+  port: 2181
+  serverPort: 2888
+  leaderElectionPort: 3888
+
+# kafka configurations
+kafka:
+  name: "kafka"
+  image: "wurstmeister/kafka:0.11.0.1"
+  replicaCount: 1
+  imagePullPolicy: "IfNotPresent"
+  restartPolicy: "Always"
+  port: 9092
+
+# Database configuration
+db:
+  name: "couchdb"
+  image: "openwhisk/kube-couchdb"
+  replicaCount: 1
+  imagePullPolicy: "IfNotPresent"
+  restartPolicy: "Always"
+  port: 5984
+  provider: "CouchDB"
+  protocol: "http"
+  auth:
+    username: "whisk_admin"
+    password: "some_passw0rd"
+  dbPrefix: "test_"
+  activationsTable: "test_activations"
+  actionsTable: "test_whisks"
+  authsTable: "test_subjects"
+  persistence:
+    enabled: false
+    pvcName: couchdb-pvc
+    size: 8Gi
+    storageClass: CouchDBSC
+    accessMode: ReadWriteOnce
+
+# Nginx configurations
+nginx:
+  name: "nginx"
+  image: "nginx:1.11"
+  replicaCount: 1
+  imagePullPolicy: "IfNotPresent"
+  restartPolicy: "Always"
+  httpPort: 80
+  httpsPort: 443
+  httpsAdminPort: 8443
+
+# Controller configurations
+controller:
+  name: "controller"
+  image: "openwhisk/controller"
+  replicaCount: 1
+  imagePullPolicy: "IfNotPresent"
+  restartPolicy: "Always"
+  port: 8080
+  limits:
+    actionsSequenceMaxlength: 50
+    triggersFiresPerminute: 60
+    actionsInvokesPerminute: 60
+    actionsInvokesConcurrentinsystem: 5000
+    actionsInvokesConcurrent: 30
+  localbookkeeping: true
+  seedNodes: "[]"
+  HA: false
+
+# Invoker configurations
+invoker:
+  name: "invoker"
+  image: "openwhisk/invoker"
+  imagePullPolicy: "IfNotPresent"
+  restartPolicy: "Always"
+  options: ""
+
+# API Gateway configurations
+apigw:
+  name: "apigateway"
+  image: "openwhisk/apigateway"
+  replicaCount: 1
+  imagePullPolicy: "IfNotPresent"
+  restartPolicy: "Always"
+  apiPort: 9000
+  mgmtPort: 8080
+
+# Resolve the pod/node affinity for invoker, controller and other components.
+affinity:
+  enabled: true
+  coreNodeLabel: core
+  edgeNodeLabel: edge
+  invokerNodeLabel: invoker
+  providerNodeLabel: provider
