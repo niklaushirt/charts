@@ -28,6 +28,7 @@ helm package velocity
 
 helm package datadog
 helm package gitlab-ce
+helm package gitlab
 helm package kube-ops-view
 helm package weave-scope
 helm package openwhisk
