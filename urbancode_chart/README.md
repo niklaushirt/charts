@@ -11,6 +11,13 @@ docker build -t "ucds:7.0.0" ./server
 docker build -t "ucda:7.0.0" ./agent
 ```
 
+Start Local Agent
+```bash
+docker run -d --rm --name local_agent -e "AGENT_NAME=local_agent" -e "SERVER_ADDR=9.30.189.183" -e "SERVER_PORT_JMS=30124" -e "SERVER_PORT_HTTP=30125" -t ucda:7.0.0
+
+docker kill local_agent
+
+```
 
 ```bash
 docker network create --subnet=172.99.0.0/16 ucd_net
@@ -21,6 +28,8 @@ docker run -d --rm --name ucd-agent --network ucd_net -e "AGENT_NAME=myagent" -e
 docker run -d --rm --name ucd-agent --network ucd_net -e "AGENT_NAME=myagent1" -e "SERVER_ADDR=172.99.0.2" -e "SERVER_PORT_JMS=7918" -e "SERVER_PORT_HTTP=7918" -t ucda:7.0.0
 docker run -d --rm --name ucd-agent --network ucd_net -e "AGENT_NAME=myagent2" -e "SERVER_ADDR=172.99.0.2" -e "SERVER_PORT_JMS=7918" -e "SERVER_PORT_HTTP=7918" -t ucda:7.0.0
 docker run -d --rm --name ucd-agent --network ucd_net -e "AGENT_NAME=myagent3" -e "SERVER_ADDR=172.99.0.2" -e "SERVER_PORT_JMS=7918" -e "SERVER_PORT_HTTP=7918" -t ucda:7.0.0
+
+
 ```
 
 

@@ -28,7 +28,13 @@ This chart installs the UCD Server.
 3. Deploy to your Kubernetes cluster.
 
   ```sh
-  $ helm install --name ucds mycharts/ucd-server
+  $ helm install \
+      --set server.serviceType=LoadBalancer \
+      --set server.nodeport.ui=30123 \
+      --set server.nodeport.jms=30124 \
+      --set server.nodeport.http=30125 \
+      --name ucda mycharts/ucd-server
+
   ```
 
 4. Read the NOTES section from the result of the previous command.
@@ -39,9 +45,11 @@ The following tables lists the configurable parameters of the UCD Server chart a
 
 Parameter                     | Description                                                                                        |  Default
 ----------------------------- | ---------------------------------------------------------------------------------------------------| ---------------------
-tag | Version of the UCD | 7.0.0                                                                                                            
-serviceType                    | Type of the Kubernetes Service | Load Balancer
-
+image.tag | Version of the UCD | 7.0.0                                                                                                            
+server.serviceType                    | Type of the Kubernetes Service | Load Balancer
+server.nodeport.ui                    | NodePort to reach UI | 7918
+server.nodeport.jms                    | NodePort for JMS communication | 7918
+server.nodeport.http                    | NodePort for HTTP communication | 7919
 
 ## Uninstalling the release
 
