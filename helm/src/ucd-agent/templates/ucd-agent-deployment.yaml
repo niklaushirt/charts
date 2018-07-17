@@ -29,7 +29,7 @@ spec:
         - name: AGENT_NAME
           value: {{ .Values.agent.name }}
         - name: SERVER_ADDR
-          value: {{ .Values.server.adress }}
+          value: {{ .Values.server.address }}
         - name: SERVER_PORT_JMS
           value: {{ .Values.server.port.jms }}
         - name: SERVER_PORT_HTTP

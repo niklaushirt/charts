@@ -10,7 +10,7 @@ agent:
   name: "myagent"
 
 server:
-  adress: "ucd-server"
+  address: "ucd-server"
   port:
     jms: "7918"
     http: "7919"

@@ -19,7 +19,7 @@ FROM ibmjava:8-sfj-alpine
 MAINTAINER Niklaus Hirt <niklaushirt@gmail.com>
 
 ENV AGENT_NAME="agent"
-ENV SERVER_ADDR="aaaa"
+ENV SERVER_ADDR="localhost"
 ENV SERVER_PORT_JMS="7918"
 ENV SERVER_PORT_HTTP="7919"
 
