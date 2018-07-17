@@ -1,0 +1,54 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "velocity.consumer.name" . }}
+  labels:
+    app: {{ template "velocity.consumer.name" . }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  type: {{ .Values.consumer.service.type }}
+  ports:
+    - name: consumer-port
+      protocol: TCP
+      {{- if eq .Values.consumer.service.type "NodePort" }}
+      nodePort: {{ .Values.consumer.service.nodePort }}
+      {{- end }}
+      port: {{ .Values.consumer.service.externalPort }}
+      targetPort: 6004
+  selector:
+    app: {{ template "velocity.consumer.name" . }}
+    release: {{ .Release.Name }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "velocity.ui.name" . }}
+  labels:
+    app: {{ template "velocity.ui.name" . }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  type: {{ .Values.ui.service.type }}
+  ports:
+    - name: ui-port
+      protocol: TCP
+      {{- if eq .Values.ui.service.type "NodePort" }}
+      nodePort: {{ .Values.ui.service.nodePort }}
+      {{- end }}
+      port: {{ .Values.ui.service.externalPort }}
+      targetPort: 80
+    {{- if eq .Values.url.protocol "https" }}
+    - name: ui-ssl-port
+      protocol: TCP
+      {{- if eq .Values.ui.service.type "NodePort" }}
+      nodePort: {{ .Values.ui.service.nodeSSLPort }}
+      {{- end }}
+      port: {{ .Values.ui.service.externalSSLPort }}
+      targetPort: 443
+    {{- end }}
+  selector:
+    app: {{ template "velocity.ui.name" . }}
+    release: {{ .Release.Name }}

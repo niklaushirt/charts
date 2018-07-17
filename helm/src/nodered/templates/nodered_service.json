@@ -1,0 +1,31 @@
+{
+  "kind": "Service",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "nodered",
+    "namespace": "default",
+    "labels": {
+      "app": "nodered"
+    }
+  },
+  "spec": {
+    "ports": [{
+      "protocol": "TCP",
+      "port": 1880,
+      "targetPort": 1880,
+      "nodePort": {{ .Values.nodePort }}
+    }],
+    "selector": {
+      "app": "nodered"
+    },
+    "type": "LoadBalancer",
+    "externalIPs": [
+      "192.168.27.100"
+    ],
+    "sessionAffinity": "None",
+    "externalTrafficPolicy": "Cluster"
+  },
+  "status": {
+    "loadBalancer": {}
+  }
+}

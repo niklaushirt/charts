@@ -1,0 +1,11 @@
+apiVersion: v1
+description: A Helm chart for IBM UrbanCode Deploy
+name: ucd-server
+version: 1.0.0
+appversion: 7.0.0
+sources:
+- https://github.com/niklaushirt/urbancode_chart
+icon: https://github.com/niklaushirt/urbancode_chart/raw/master/helm/charts/icons/urbancodedeployicon.png
+maintainers:
+- name: Niklaus Hirt
+  email: niklaushirt@gmail.com

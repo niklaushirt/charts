@@ -1,0 +1,33 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: ucd-server
+    app: {{ template "fullname" . }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: {{ .Release.Name }}
+    heritage: "{{ .Release.Service }}"
+  name: ucd-server
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: {{ template "fullname" . }}
+        chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+        release: {{ .Release.Name }}
+        heritage: "{{ .Release.Service }}"
+        io.kompose.service: ucd-server
+    spec:
+      containers:
+      - image: mycluster.icp:8500/default/ucds:{{ .Values.tag }}
+        name: ucd-server
+        ports:
+        - containerPort: 8443
+        - containerPort: 7918
+        resources: {}
+      restartPolicy: Always
+status: {}
