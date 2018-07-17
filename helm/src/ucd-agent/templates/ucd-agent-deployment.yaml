@@ -24,12 +24,16 @@ spec:
     spec:
       containers:
       - name: {{ template "fullname" . }}
-        image: mycluster.icp:8500/default/ucda:{{ .Values.tag }}
+        image: mycluster.icp:8500/default/ucda:{{ .Values.image.tag }}
         env:
         - name: AGENT_NAME
-          value: {{ .Values.agentname }}
+          value: {{ .Values.agent.name }}
         - name: SERVER_ADDR
-          value: {{ .Values.serveradress }}
+          value: {{ .Values.server.adress }}
+        - name: SERVER_PORT_JMS
+          value: {{ .Values.server.port.jms }}
+        - name: SERVER_PORT_HTTP
+          value: {{ .Values.server.port.http }}
         resources: {}
       restartPolicy: Always
 status: {}

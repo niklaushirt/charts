@@ -3,10 +3,10 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    io.kompose.service: ucd-server
-  name: ucd-server
+    io.kompose.service: {{ template "fullname" . }}
+  name: {{ template "fullname" . }}
 spec:
-  type: "{{ .Values.serviceType }}"
+  type: "{{ .Values.server.serviceType }}"
   ports:
   - name: "https"
     port: 8443
@@ -19,6 +19,6 @@ spec:
     port: 7919
     targetPort: 7919
   selector:
-    io.kompose.service: ucd-server
+    io.kompose.service: {{ template "fullname" . }}
 status:
   loadBalancer: {}

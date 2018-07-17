@@ -3,8 +3,14 @@
 # Declare variables to be passed into your templates.repository_ucds: ibmcom/ucds
 
 # Version  for UrbanCode Deploy Server
-tag: 7.0.0
+image:
+  tag: 7.0.0
 
-agentname: "myagent"
+agent:
+  name: "myagent"
 
-serveradress: "ucd-server"
+server:
+  adress: "ucd-server"
+  port:
+    jms: "7918"
+    http: "7919"

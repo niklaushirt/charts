@@ -3,8 +3,10 @@
 # Declare variables to be passed into your templates.repository_ucds: ibmcom/ucds
 
 # Version  for UrbanCode Deploy Server
-tag: 7.0.0
+image:
+  tag: 7.0.0
 
 
 #Service Type for UrbanCode Deploy Server
-serviceType: "LoadBalancer"
+server:
+  serviceType: "LoadBalancer"
