@@ -26,7 +26,8 @@ helm package ucd-server
 helm package ucd-agent
 helm package velocity
 
-
+#HACK for DEMO LIBERTY
+cp ../../demoliberty/chart_versions/*.tgz .
 
 #CREATE INDEX.YAML
 helm repo index --url https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/ ./
@@ -50,6 +51,3 @@ cp  ./*.tgz ../charts/repo/stable/
 
 #COPY INDEX.YAML
 cp index.yaml ../charts/repo/stable/index.yaml
-
-#HACK for DEMO LIBERTY
-cp ../../demoliberty/chart_versions/*.tgz ../charts/repo/stable/
