@@ -1,0 +1,13 @@
+
+arg0=defaultServer
+arg1=--pid=
+arg2=--stop
+exit=1
+
+                 Java home:  /Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/jre
+              Install root:  /Users/nhirt/Dropbox/PROJECTS/CLOUDPRIVATE/CHARTS/demoliberty/target/liberty/wlp/
+          System libraries:  /Users/nhirt/Dropbox/PROJECTS/CLOUDPRIVATE/CHARTS/demoliberty/target/liberty/wlp/lib/
+                 User root:  /Users/nhirt/Dropbox/PROJECTS/CLOUDPRIVATE/CHARTS/demoliberty/target/liberty/wlp/usr/
+                    Config:  /Users/nhirt/Dropbox/PROJECTS/CLOUDPRIVATE/CHARTS/demoliberty/target/liberty/wlp/usr/servers/defaultServer/
+                    Output:  /Users/nhirt/Dropbox/PROJECTS/CLOUDPRIVATE/CHARTS/demoliberty/target/liberty/wlp/usr/servers/defaultServer/
+
