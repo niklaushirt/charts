@@ -27,13 +27,13 @@ spec:
         image: mycluster.icp:8500/default/ucda:{{ .Values.image.tag }}
         env:
         - name: AGENT_NAME
-          value: {{ .Values.agent.name }}
+          value: "{{ .Values.agent.name }}"
         - name: SERVER_ADDR
-          value: {{ .Values.server.address }}
+          value: "{{ .Values.server.address }}"
         - name: SERVER_PORT_JMS
-          value: {{ .Values.server.port.jms }}
+          value: "{{ .Values.server.port.jms }}"
         - name: SERVER_PORT_HTTP
-          value: {{ .Values.server.port.http }}
+          value: "{{ .Values.server.port.http }}"
         resources: {}
       restartPolicy: Always
 status: {}
