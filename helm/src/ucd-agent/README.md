@@ -34,6 +34,18 @@ This chart installs an Agent that conntects to the UCD Server.
       --set server.port.http=7919 \
       --name ucda mycharts/ucd-agent
   ```
+ or
+
+  ```sh
+  $ helm install \
+      --set agent.name=test1 \
+      --set server.address=9.30.189.183 \
+      --set server.port.jms=30124 \
+      --set server.port.http=30125 \
+      --name ucda1 mycharts/ucd-agent --tls
+  ```
+
+
 
 4. Read the NOTES section from the result of the previous command.
 
