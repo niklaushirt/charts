@@ -14,11 +14,11 @@ spec:
     nodePort: {{ .Values.server.nodeport.ui }}
   - name: "agentjms"
     port: 7918
-    targetPort: 7918,
+    targetPort: 7918
     nodePort: {{ .Values.server.nodeport.jms }}
   - name: "agenthttp"
     port: 7919
-    targetPort: 7919,
+    targetPort: 7919
     nodePort: {{ .Values.server.nodeport.http }}
 
   selector:
