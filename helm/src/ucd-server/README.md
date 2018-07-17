@@ -19,7 +19,7 @@ This chart installs the UCD Server.
 
   ```sh
   $ helm init
-  $ helm repo add mycharts https://raw.githubusercontent.com/niklaushirt/charts/master/charts/repo/stable/
+  $ helm repo add mycharts https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/
   $ helm fetch mycharts/ucd-server
   ```
 

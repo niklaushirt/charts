@@ -1,6 +1,6 @@
 description: Simple Liberty Demo
 home: https://github.com/kubernetes/helm
-icon: https://github.com/niklaushirt/demoliberty/raw/master/charts/stable/icons/icp.png
+icon: https://github.com/niklaushirt/charts/blob/master/helm/charts/icons/icp.png
 keywords:
 - http
 - nginx
@@ -11,5 +11,5 @@ maintainers:
   name: Niklaus Hirt
 name: demoliberty
 sources:
-- https://github.com/niklaushirt/demoliberty
+- https://github.com/niklaushirt/charts
 version: 1.3.0
