@@ -227,3 +227,17 @@ Master:
     -Dhttps.proxyHost=192.168.64.1
     -Dhttps.proxyPort=3128
 ```
+
+
+
+- kubernetes:1.8.4
+- ssh-agent:1.15
+- ssh-credentials:1.14
+- ssh-slaves:1.26
+- docker:2.60.3
+- workflow-aggregator:2.5
+- workflow-job:2.23
+- credentials-binding:1.16
+- git:3.9.1
+- ssh2easy:1.4
+- ssh:2.6.1
