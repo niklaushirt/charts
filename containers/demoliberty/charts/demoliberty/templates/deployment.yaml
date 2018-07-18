@@ -15,7 +15,7 @@ spec:
         placement: {{ .Values.deploy }}
       containers:
       - name: {{ .Chart.Name }}
-        image: mycluster.icp:8500/default/"{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        image: "mycluster.icp:8500/default/{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         ports:
         - containerPort: {{ .Values.service.internalPort }}

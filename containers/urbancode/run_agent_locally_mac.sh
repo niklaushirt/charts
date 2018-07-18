@@ -60,4 +60,8 @@ rm -f ./*.properties
 
 
 echo "Starting the agent now"
-$UCDA_PATH/bin/agent run
+$UCDA_PATH/bin/agent start
+
+tail -f $UCDA_PATH/var/log/agent.out
+
+#$UCDA_PATH/bin/agent stop
