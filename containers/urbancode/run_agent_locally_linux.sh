@@ -30,6 +30,25 @@ echo "--------------------------------------------------------------------------
 #sudo apt-get install openjdk-8-jdk
 #update-alternatives --config java
 
+
+#Mon Jul 23 06:58:29 PDT 2018
+# IBM\ UrbanCode\ Deploy/java.home=/usr/lib/jvm/java-8-openjdk-amd64/jre
+# agent.HttpFailoverHandler.disabled=null
+# agentcomm.enabled=true
+# agentcomm.server.uri=random\:(wss\://9.30.250.6\:30125)
+# encryption.keystore=../conf/encryption.keystore
+# encryption.keystore.alias=aes128keybaxd
+# encryption.keystore.password=pbe{xlT8V1t3CEmoVVlvilBHemTEByBVh4ta94J8JNQJJ44\=}
+# locked/agent.brokerUrl=failover\:()
+# locked/agent.home=/opt/ibm-ucd/agent
+# locked/agent.id=wVRsjhXotpUzwUgYPnpA
+# locked/agent.keystore=../conf/agent.keystore
+# locked/agent.keystore.pwd=pbe{v1Q7ev9lcWszZIpMMlykVrnrJaEswgJZ3TnotMbG0bs\=}
+# locked/agent.mutual_auth=null
+# locked/agent.name=LOCAL
+# system.default.encoding=UTF-8
+# verify.server.identity=null
+
 mkdir -p $UCDA_PATH/install_ucd_agent
 
 cp ./config/*.zip $UCDA_PATH/install_ucd_agent
@@ -52,6 +71,9 @@ echo "locked/agent.name="$agentName >> ./ucd-agent-install/agent.install.propert
 echo "locked/agent.id="$agentName >> ./ucd-agent-install/agent.install.properties
 echo "locked/agent.jms.remote.port="$SERVER_PORT_JMS >> ./ucd-agent-install/agent.install.properties
 echo "agentcomm.server.uri=wss://"$SERVER_ADDR":"$SERVER_PORT_HTTP >> ./ucd-agent-install/agent.install.properties
+
+
+echo $SERVER_ADDR"  ucd-server" >> /etc/hosts
 
 
 cat ./ucd-agent-install/agent.install.properties

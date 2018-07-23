@@ -10,7 +10,7 @@
     "components": [{
         "name": "DEMO",
         "description": "",
-        "created": 1532348377742,
+        "created": 1532353271318,
         "componentType": "STANDARD",
         "ignoreQualifiers": 0,
         "importAutomatically": false,
@@ -50,19 +50,43 @@
             "status": "Active",
             "configActionType": "ADD",
             "active": true,
-            "path": "components\/164c714a-a97b-c2d7-c3d7-59618f141844\/processes\/164c714c-f5c5-4fd5-2fc8-dd091549f6f9",
+            "path": "components\/164c75f5-616b-b2a3-001b-cd86c3da554f\/processes\/164c75f5-88f2-dd26-f379-de85d5e1369f",
             "deleted": false,
             "propDefs": [],
             "rootActivity": {
                 "edges": [
                     {
-                        "to": "Download Artifacts",
-                        "type": "ALWAYS",
+                        "to": "Delete Files and Directories",
+                        "from": "a4522af481bad18fe40dcd11add73e",
+                        "type": "FAILURE",
                         "value": ""
                     },
                     {
                         "to": "0c218be7e36069bc932d17d4399356",
+                        "from": "a4522af481bad18fe40dcd11add73e",
+                        "type": "SUCCESS",
+                        "value": ""
+                    },
+                    {
+                        "to": "0c218be7e36069bc932d17d4399356",
+                        "from": "KUBE APPLY",
+                        "type": "SUCCESS",
+                        "value": ""
+                    },
+                    {
+                        "to": "KUBE APPLY",
                         "from": "Download Artifacts",
+                        "type": "SUCCESS",
+                        "value": ""
+                    },
+                    {
+                        "to": "a4522af481bad18fe40dcd11add73e",
+                        "type": "ALWAYS",
+                        "value": ""
+                    },
+                    {
+                        "to": "Download Artifacts",
+                        "from": "Delete Files and Directories",
                         "type": "SUCCESS",
                         "value": ""
                     }
@@ -70,22 +94,43 @@
                 "offsets": [
                     {
                         "name": "Download Artifacts",
-                        "x": -75,
-                        "y": 230,
-                        "h": 70,
-                        "w": 260
+                        "x": -264.48559670781896,
+                        "y": 400,
+                        "h": 100,
+                        "w": 390
+                    },
+                    {
+                        "name": "Delete Files and Directories",
+                        "x": -319.48559670781896,
+                        "y": 250,
+                        "h": 100,
+                        "w": 500
+                    },
+                    {
+                        "name": "KUBE APPLY",
+                        "x": -171.98559670781896,
+                        "y": 550,
+                        "h": 100,
+                        "w": 220
                     },
                     {
                         "name": "0c218be7e36069bc932d17d4399356",
-                        "x": -5,
-                        "y": 450,
-                        "h": 80,
-                        "w": 120
+                        "x": -66.98559670781896,
+                        "y": 700,
+                        "h": 90,
+                        "w": 150
+                    },
+                    {
+                        "name": "a4522af481bad18fe40dcd11add73e",
+                        "x": -55,
+                        "y": 140,
+                        "h": 60,
+                        "w": 330
                     }
                 ],
                 "layoutMode": "auto",
                 "type": "graph",
-                "name": "b0e438cf-45f0-40de-a52c-8c48aa1108b6",
+                "name": "88934f74-06a1-4117-ac06-ffb9734fd547",
                 "children": [
                     {
                         "type": "finish",
@@ -128,6 +173,68 @@
                         "type": "plugin",
                         "name": "Download Artifacts",
                         "children": []
+                    },
+                    {
+                        "allowFailure": false,
+                        "useImpersonation": false,
+                        "showHidden": false,
+                        "impersonationUseSudo": false,
+                        "pluginVersion": 64,
+                        "commandName": "Delete Files and Directories",
+                        "pluginName": "File Utils",
+                        "authTokenRestriction": "20000001-0001-0001-0001-000000000000",
+                        "properties": {
+                            "baseDir": ".",
+                            "includes": "**\/*",
+                            "excludes": "",
+                            "followSymlinks": "false",
+                            "caseSensitive": "true"
+                        },
+                        "cachedAuthTokenRestriction": {
+                            "name": "System Default",
+                            "description": "Used by default for any plugin steps without a specified token restriction",
+                            "restrictions": [{
+                                "verb": "ALL",
+                                "url": "\/*"
+                            }]
+                        },
+                        "type": "plugin",
+                        "name": "Delete Files and Directories",
+                        "children": []
+                    },
+                    {
+                        "allowFailure": false,
+                        "useImpersonation": false,
+                        "showHidden": false,
+                        "impersonationUseSudo": false,
+                        "pluginVersion": 9,
+                        "commandName": "Shell",
+                        "pluginName": "Shell",
+                        "authTokenRestriction": "20000001-0001-0001-0001-000000000000",
+                        "properties": {
+                            "directoryOffset": ".",
+                            "shellInterpreter": "",
+                            "scriptBody": "kubectl apply -f deploy.yaml",
+                            "runAsDaemon": "false",
+                            "outputFile": ""
+                        },
+                        "cachedAuthTokenRestriction": {
+                            "name": "System Default",
+                            "description": "Used by default for any plugin steps without a specified token restriction",
+                            "restrictions": [{
+                                "verb": "ALL",
+                                "url": "\/*"
+                            }]
+                        },
+                        "type": "plugin",
+                        "name": "KUBE APPLY",
+                        "children": []
+                    },
+                    {
+                        "status": "SUCCESS",
+                        "type": "setStatus",
+                        "name": "a4522af481bad18fe40dcd11add73e",
+                        "children": []
                     }
                 ]
             }
@@ -159,8 +266,8 @@
             "properties": []
         },
         "baseResources": [{
-            "path": "\/MY_DATACENTER\/DEMO",
-            "id": "164c7301-604e-a195-15a6-10e8d550d2ae"
+            "path": "\/DC\/DEMO",
+            "id": "164c772e-8ecc-b527-4180-daaba2b863fd"
         }],
         "componentPropSheets": [{
             "properties": [],
@@ -191,23 +298,23 @@
             ],
             "offsets": [
                 {
-                    "name": "3be218635e4882bbc47ca3263743cc",
-                    "x": -50,
-                    "y": 230,
-                    "h": 70,
-                    "w": 190
-                },
-                {
                     "name": "a8ab2aa32c15beba7e2685afb3ac83",
                     "x": -5,
                     "y": 430,
                     "h": 80,
                     "w": 120
+                },
+                {
+                    "name": "3be218635e4882bbc47ca3263743cc",
+                    "x": -50,
+                    "y": 230,
+                    "h": 70,
+                    "w": 190
                 }
             ],
             "layoutMode": "auto",
             "type": "graph",
-            "name": "82d619cc-91e5-4e2f-9837-1b1e38acad18",
+            "name": "17e39081-ef93-4a73-83e7-d0c3c72f9386",
             "children": [
                 {
                     "type": "finish",
@@ -232,7 +339,7 @@
                         "componentName": "DEMO",
                         "status": "Active",
                         "type": "inventoryVersionDiff",
-                        "name": "9de10bf7-5ab1-45a2-b49b-4320e464e61c",
+                        "name": "fbd6a6ce-b319-44ea-8927-4ece82ec5ad9",
                         "children": [{
                             "componentProcessName": "deploy",
                             "componentName": "DEMO",

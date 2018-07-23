@@ -20,7 +20,7 @@ This chart installs the UCD Server.
   ```sh
   $ helm init
   $ helm repo add mycharts https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/
-  $ helm fetch mycharts/ucd-server
+  $ helm fetch mycharts/devops-ucd-server
   ```
 
 2. Refer to the Configuration section below to customize the deployment. The following step (step 3) shows the values at minimal that are required to be set.
@@ -33,7 +33,7 @@ This chart installs the UCD Server.
       --set server.nodeport.ui=30123 \
       --set server.nodeport.jms=30124 \
       --set server.nodeport.http=30125 \
-      --name ucds mycharts/ucd-server
+      --name ucds mycharts/devops-ucd-server
 
   ```
 
