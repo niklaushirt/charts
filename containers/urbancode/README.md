@@ -5,8 +5,10 @@
 ```bash
 git clone https://github.com/niklaushirt/charts.git
 cd charts/containers/urbancode
-docker build -t "ucds:7.0.0" ./server
+
 docker build -t "ucda:7.0.0" ./agent
+
+docker build -t "ucds:7.0.0" ./server
 ```
 
 ## Run locally

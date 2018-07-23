@@ -1,0 +1,3 @@
+helm install --name jenkins stable/jenkins --tls
+
+helm install --name gitlab stable/gitlab-ce --tls
