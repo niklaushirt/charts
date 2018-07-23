@@ -1,3 +1,5 @@
 URBANCODE_DEPLOY_*.zip
 ucd-agent.zip
 OLD/
+plugins/
+.gitignore

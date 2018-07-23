@@ -1,0 +1,11 @@
+apiVersion: v1
+description: A Helm chart for a complete DevOps Pipeline - IBM UrbanCode Deploy
+name: devops-ucd-server
+version: 1.0.0
+appversion: 7.0.0
+sources:
+- https://github.com/niklaushirt/charts
+icon: https://github.com/niklaushirt/charts/blob/master/helm/charts/icons/urbancodedeployicon.png
+maintainers:
+- name: Niklaus Hirt
+  email: niklaushirt@gmail.com

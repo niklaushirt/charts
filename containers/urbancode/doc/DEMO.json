@@ -1,0 +1,255 @@
+{
+    "name": "DEMO",
+    "description": "",
+    "enforceCompleteSnapshots": false,
+    "propSheet": {"properties": []},
+    "templatePropSheet": {
+        "name": "template",
+        "properties": []
+    },
+    "components": [{
+        "name": "DEMO",
+        "description": "",
+        "created": 1532348377742,
+        "componentType": "STANDARD",
+        "ignoreQualifiers": 0,
+        "importAutomatically": false,
+        "useVfs": true,
+        "active": true,
+        "deleted": false,
+        "defaultVersionType": "FULL",
+        "cleanupDaysToKeep": 0,
+        "cleanupCountToKeep": 0,
+        "envPropDefs": [],
+        "resPropDefs": [],
+        "versionPropDefs": [{
+            "name": "jenkins.server",
+            "label": "jenkins.server",
+            "pattern": "",
+            "type": "TEXT",
+            "required": false,
+            "description": "",
+            "placeholder": ""
+        }],
+        "propSheetGroup": {"propSheets": [
+            {
+                "name": "custom",
+                "properties": []
+            },
+            {
+                "name": "template",
+                "properties": []
+            }
+        ]},
+        "processes": [{
+            "name": "deploy",
+            "description": "",
+            "defaultWorkingDir": "${p:resource\/work.dir}\/${p:component.name}",
+            "takesVersion": true,
+            "inventoryActionType": "ADD",
+            "status": "Active",
+            "configActionType": "ADD",
+            "active": true,
+            "path": "components\/164c714a-a97b-c2d7-c3d7-59618f141844\/processes\/164c714c-f5c5-4fd5-2fc8-dd091549f6f9",
+            "deleted": false,
+            "propDefs": [],
+            "rootActivity": {
+                "edges": [
+                    {
+                        "to": "Download Artifacts",
+                        "type": "ALWAYS",
+                        "value": ""
+                    },
+                    {
+                        "to": "0c218be7e36069bc932d17d4399356",
+                        "from": "Download Artifacts",
+                        "type": "SUCCESS",
+                        "value": ""
+                    }
+                ],
+                "offsets": [
+                    {
+                        "name": "Download Artifacts",
+                        "x": -75,
+                        "y": 230,
+                        "h": 70,
+                        "w": 260
+                    },
+                    {
+                        "name": "0c218be7e36069bc932d17d4399356",
+                        "x": -5,
+                        "y": 450,
+                        "h": 80,
+                        "w": 120
+                    }
+                ],
+                "layoutMode": "auto",
+                "type": "graph",
+                "name": "b0e438cf-45f0-40de-a52c-8c48aa1108b6",
+                "children": [
+                    {
+                        "type": "finish",
+                        "name": "0c218be7e36069bc932d17d4399356",
+                        "children": []
+                    },
+                    {
+                        "allowFailure": false,
+                        "useImpersonation": false,
+                        "showHidden": false,
+                        "impersonationUseSudo": false,
+                        "pluginVersion": 30,
+                        "commandName": "Download Artifacts",
+                        "pluginName": "UrbanCode Deploy Versioned File Storage",
+                        "authTokenRestriction": "20000001-0001-0001-0001-000000000000",
+                        "properties": {
+                            "directoryOffset": ".",
+                            "artifactSetBaseDir": "",
+                            "fileIncludePatterns": "deploy.yaml",
+                            "fileExcludePatterns": "",
+                            "syncMode": "true",
+                            "fullVerification": "true",
+                            "setFileExecuteBits": "false",
+                            "verifyFileIntegrity": "false",
+                            "versionId": "${p:version.id}",
+                            "serverUrl": "${p:server.url}",
+                            "compId": "${p:component.id}",
+                            "resId": "${p:resource.id}",
+                            "charset": "",
+                            "label": ""
+                        },
+                        "cachedAuthTokenRestriction": {
+                            "name": "System Default",
+                            "description": "Used by default for any plugin steps without a specified token restriction",
+                            "restrictions": [{
+                                "verb": "ALL",
+                                "url": "\/*"
+                            }]
+                        },
+                        "type": "plugin",
+                        "name": "Download Artifacts",
+                        "children": []
+                    }
+                ]
+            }
+        }],
+        "configTemplates": [],
+        "genericProcesses": [],
+        "teamMappings": [],
+        "tags": []
+    }],
+    "environments": [{
+        "name": "DEMO",
+        "description": "",
+        "color": "#FDB813",
+        "requireApprovals": false,
+        "noSelfApprovals": false,
+        "exemptProcesses": [],
+        "lockSnapshots": false,
+        "requireSnapshots": false,
+        "cleanupDaysToKeep": 0,
+        "cleanupCountToKeep": 0,
+        "enableProcessHistoryCleanup": true,
+        "useSystemDefaultDays": true,
+        "historyCleanupDaysToKeep": 365,
+        "order": 0,
+        "active": true,
+        "propSheet": {"properties": []},
+        "templatePropSheet": {
+            "name": "template",
+            "properties": []
+        },
+        "baseResources": [{
+            "path": "\/MY_DATACENTER\/DEMO",
+            "id": "164c7301-604e-a195-15a6-10e8d550d2ae"
+        }],
+        "componentPropSheets": [{
+            "properties": [],
+            "componentName": "DEMO"
+        }],
+        "versionConditions": [],
+        "teamMappings": []
+    }],
+    "statuses": [],
+    "processes": [{
+        "name": "deploy",
+        "description": "",
+        "inventoryManagementType": "AUTOMATIC",
+        "offlineAgentHandling": "PRE_EXECUTION_CHECK",
+        "rootActivity": {
+            "edges": [
+                {
+                    "to": "a8ab2aa32c15beba7e2685afb3ac83",
+                    "from": "3be218635e4882bbc47ca3263743cc",
+                    "type": "SUCCESS",
+                    "value": ""
+                },
+                {
+                    "to": "3be218635e4882bbc47ca3263743cc",
+                    "type": "ALWAYS",
+                    "value": ""
+                }
+            ],
+            "offsets": [
+                {
+                    "name": "3be218635e4882bbc47ca3263743cc",
+                    "x": -50,
+                    "y": 230,
+                    "h": 70,
+                    "w": 190
+                },
+                {
+                    "name": "a8ab2aa32c15beba7e2685afb3ac83",
+                    "x": -5,
+                    "y": 430,
+                    "h": 80,
+                    "w": 120
+                }
+            ],
+            "layoutMode": "auto",
+            "type": "graph",
+            "name": "82d619cc-91e5-4e2f-9837-1b1e38acad18",
+            "children": [
+                {
+                    "type": "finish",
+                    "name": "a8ab2aa32c15beba7e2685afb3ac83",
+                    "children": []
+                },
+                {
+                    "componentName": "DEMO",
+                    "properties": [
+                        {
+                            "name": "maxIteration",
+                            "value": "-1"
+                        },
+                        {
+                            "name": "failFast",
+                            "value": "false"
+                        }
+                    ],
+                    "type": "componentEnvironmentIterator",
+                    "name": "3be218635e4882bbc47ca3263743cc",
+                    "children": [{
+                        "componentName": "DEMO",
+                        "status": "Active",
+                        "type": "inventoryVersionDiff",
+                        "name": "9de10bf7-5ab1-45a2-b49b-4320e464e61c",
+                        "children": [{
+                            "componentProcessName": "deploy",
+                            "componentName": "DEMO",
+                            "allowFailure": false,
+                            "properties": {},
+                            "type": "componentProcess",
+                            "name": "Install: \"DEMO\"",
+                            "children": []
+                        }]
+                    }]
+                }
+            ]
+        },
+        "propDefs": [],
+        "versionPresets": []
+    }],
+    "genericProcesses": [],
+    "teamMappings": [],
+    "tags": []
+}

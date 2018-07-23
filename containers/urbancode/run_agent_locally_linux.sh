@@ -1,5 +1,6 @@
 export AGENT_NAME="agent"
-export SERVER_ADDR="9.30.189.183"
+#export SERVER_ADDR="9.30.189.183"
+export SERVER_ADDR="9.30.250.6"
 export SERVER_PORT_UI="30123"
 export SERVER_PORT_JMS="30124"
 export SERVER_PORT_HTTP="30125"
@@ -12,7 +13,7 @@ export ARCHITECTURE=linux #mac or linux
 #-----------------------------------------------------------------------------
 #-----------------------------------------------------------------------------
 
-export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/jre/"
 export timestamp=$(date +%s)
 
 echo "-----------------------------------------------------------------------------"
@@ -26,11 +27,13 @@ echo "UCD Server HTTP Port    : "$SERVER_PORT_HTTP
 echo "-----------------------------------------------------------------------------"
 echo "-----------------------------------------------------------------------------"
 
+#sudo apt-get install openjdk-8-jdk
+#update-alternatives --config java
 
 mkdir -p $UCDA_PATH/install_ucd_agent
 
 cp ./config/*.zip $UCDA_PATH/install_ucd_agent
-cp ./config/common/*.properties $UCDA_PATH/install_ucd_agent
+cp ./config/*.properties $UCDA_PATH/install_ucd_agent
 
 
 cd $UCDA_PATH/install_ucd_agent
