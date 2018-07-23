@@ -15,6 +15,7 @@ helm package demoliberty
 helm package devops-gitlab
 helm package devops-jenkins
 helm package devops-ucd-server
+helm package devops-ucd-agent
 helm package kubernetes-dashboard
 helm package mariadb
 helm package mongodb
@@ -23,7 +24,6 @@ helm package nodered
 helm package openwhisk
 helm package sonarqube
 helm package tomcat
-helm package ucd-agent
 helm package velocity
 
 #HACK for DEMO LIBERTY
