@@ -70,7 +70,7 @@ Master:
     - kubernetes:1.8.4
     - workflow-aggregator:2.5
     - workflow-job:2.23
-    - credentials-binding:1.13
+    - credentials-binding:1.16
     - git:3.9.1
   # Used to approve a list of groovy functions in pipelines used the script-security plugin. Can be viewed under /scriptApproval
   # ScriptApproval:

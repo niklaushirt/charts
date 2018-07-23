@@ -1,11 +1,16 @@
-
 node {
   def mvnHome
-  stage('Preparation') { // for display purposes
+
+  //----------------------------------------------------------------------------------------
+  //----------------------------------------------------------------------------------------
+  //  GET SOURCES FROM GIT
+  //----------------------------------------------------------------------------------------
+  //----------------------------------------------------------------------------------------
+  stage('CI-Get-Sources') { // for display purposes
     withCredentials([usernamePassword(credentialsId: 'GIT', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
       // Get some code from a GitHub repository
       //    git credentialsId: 'ec8087f2-8cc0-4d65-99bc-5efdd0085d6f', url: 'https://github.com/niklaushirt/libertydemo.git'
-      git credentialsId: '$PASSWORD', url: 'https://github.com/niklaushirt/libertydemo.git'
+      git credentialsId: '$PASSWORD', url: 'http://9.30.250.6:31625/demo/libertydemo.git'
     }
 
     // Get the Maven tool.
@@ -14,7 +19,18 @@ node {
     mvnHome = tool 'M3'
     //dockerHome = tool 'docker'
   }
-  stage('CI-Build') {
+
+
+  //----------------------------------------------------------------------------------------
+  //----------------------------------------------------------------------------------------
+  //  MAVEN BUILD
+  //----------------------------------------------------------------------------------------
+  //----------------------------------------------------------------------------------------
+  stage('CI-MVN-Build') {
+    // Adapt Demo Page
+    sh "sed -i 's/DevOps Demo/DevOps Demo - 1.${BUILD_NUMBER}/g'  ./src/main/webapp/index.html"
+    sh "cat ./src/main/webapp/index.html"
+
     // Run the maven build
     if (isUnix()) {
       sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore package"
@@ -22,7 +38,14 @@ node {
       bat(/"${mvnHome}\bin\mvn" -Dmaven.test.failure.ignore package/)
     }
   }
-  stage('CI-Docker-Build') {
+
+
+  //----------------------------------------------------------------------------------------
+  //----------------------------------------------------------------------------------------
+  //  DOCKER BUILD
+  //----------------------------------------------------------------------------------------
+  //----------------------------------------------------------------------------------------
+  stage('CI-DOCKER-Build') {
     withCredentials([usernamePassword(credentialsId: 'ICP', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
       sh "cd '$WORKSPACE'"
       sh "ls"
@@ -38,37 +61,71 @@ node {
       //}
     }
   }
-  stage('CI-Push-To-UrbanCode') {
-    step([$class: 'UCDeployPublisher',
-      siteName: 'LOCAL',
-      component: [
-        $class: 'com.urbancode.jenkins.plugins.ucdeploy.VersionHelper$VersionBlock',
-        componentName: 'LIBERTY',
-        delivery: [
-          $class: 'com.urbancode.jenkins.plugins.ucdeploy.DeliveryHelper$Push',
-          pushVersion: '${BUILD_NUMBER}',
-          baseDir: '$WORKSPACE',
-          fileIncludePatterns: '*.*',
-          fileExcludePatterns: '',
-          pushProperties: 'jenkins.server=Local\njenkins.reviewed=false',
-          pushDescription: 'Pushed from Jenkins'
-        ]
-      ]
-    ])
-  }
-  stage('CD-Deploy-To-ICP') {
-   step([$class: 'UCDeployPublisher',
-        siteName: 'LOCAL',
-        deploy: [
-            $class: 'com.urbancode.jenkins.plugins.ucdeploy.DeployHelper$DeployBlock',
-            deployApp: 'DEMO',
-            deployEnv: 'TEST',
-            deployProc: 'deploy',
-            deployVersions: 'LIBERTY:${BUILD_NUMBER}',
-            //deployVersions: 'LIBERTY:49',
 
-            deployOnlyChanged: false
-        ]
-    ])
+
+  //----------------------------------------------------------------------------------------
+  //----------------------------------------------------------------------------------------
+  //  KUBERNETES DEPLOY FILE
+  //----------------------------------------------------------------------------------------
+  //----------------------------------------------------------------------------------------
+  stage('CI-KUBE-Build') {
+    sh "sed -i 's/liberty_demo:1.9/liberty_demo:1.${BUILD_NUMBER}/g' deploy.yaml"
+    sh "cat deploy.yaml"
   }
+
+
+  //----------------------------------------------------------------------------------------
+  //----------------------------------------------------------------------------------------
+  //  KUBERNETES DEPLOY
+  //----------------------------------------------------------------------------------------
+  //----------------------------------------------------------------------------------------
+  stage('CD-KUBE-Deploy') {
+   sh "kubectl apply -f deploy.yaml"
+  }
+
+
+  //----------------------------------------------------------------------------------------
+  //----------------------------------------------------------------------------------------
+  //  PUSH VERSION TO UCD
+  //----------------------------------------------------------------------------------------
+  //----------------------------------------------------------------------------------------
+  // stage('CI-Push-To-UrbanCode') {
+  //   step([$class: 'UCDeployPublisher',
+  //     siteName: 'LOCAL',
+  //     component: [
+  //       $class: 'com.urbancode.jenkins.plugins.ucdeploy.VersionHelper$VersionBlock',
+  //       componentName: 'LIBERTY',
+  //       delivery: [
+  //         $class: 'com.urbancode.jenkins.plugins.ucdeploy.DeliveryHelper$Push',
+  //         pushVersion: '${BUILD_NUMBER}',
+  //         baseDir: '$WORKSPACE',
+  //         fileIncludePatterns: '*.*',
+  //         fileExcludePatterns: '',
+  //         pushProperties: 'jenkins.server=Local\njenkins.reviewed=false',
+  //         pushDescription: 'Pushed from Jenkins'
+  //       ]
+  //     ]
+  //   ])
+  // }
+
+  //----------------------------------------------------------------------------------------
+  //----------------------------------------------------------------------------------------
+  //  DEPLOY VERSION WITH UCD
+  //----------------------------------------------------------------------------------------
+  //----------------------------------------------------------------------------------------
+  // stage('CD-Deploy-To-ICP') {
+  //  step([$class: 'UCDeployPublisher',
+  //       siteName: 'LOCAL',
+  //       deploy: [
+  //           $class: 'com.urbancode.jenkins.plugins.ucdeploy.DeployHelper$DeployBlock',
+  //           deployApp: 'DEMO',
+  //           deployEnv: 'TEST',
+  //           deployProc: 'deploy',
+  //           deployVersions: 'LIBERTY:${BUILD_NUMBER}',
+  //           //deployVersions: 'LIBERTY:49',
+  //
+  //           deployOnlyChanged: false
+  //       ]
+  //   ])
+  // }
 }
