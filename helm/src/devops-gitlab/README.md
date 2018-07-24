@@ -1,24 +1,53 @@
 # GitLab Helm Chart
 
+![GL_MAP](https://github.com/niklaushirt/charts/blob/master/helm/charts/icons/gitlab_bp.png)
 
 
-## Chart Details
 
-This chart will do the following:
+## Pre-requisite
 
-* 1 x GitLab Mexposed on an external LoadBalancer
-* All using Kubernetes Deployments
+- Kubernetes 1.4+ with Beta APIs enabled
+- Helm v2.6  (version might vary, which ever is compatible with your Kuberetes cluster).
 
-## Installing the Chart
+## Installing the Chart and images
 
-To install the chart with the release name `my-release`:
+1. Get the required helm charts.
+
+  ```sh
+  $ helm init
+  $ helm repo add mycharts https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/
+  $ helm fetch mycharts/devops-gitlab
+  ```
+
+2. Refer to the Configuration section below to customize the deployment. The following step (step 3) shows the values at minimal that are required to be set.
+
+3. Deploy to your Kubernetes cluster.
+
+  ```sh
+  $ helm install --name gitlab mycharts/gitlab-ce
+
+  ```
+
+4. Read the NOTES section from the result of the previous command.
+
+## Configuration
+
+The following tables lists the configurable parameters of the GitLab chart and their default values.
+
+Parameter                     | Description                                                                                        |  Default
+----------------------------- | ---------------------------------------------------------------------------------------------------| ---------------------
+image.name | Image for GitLab | gitlab/gitlab-ce    
+image.tag | Version of GitLab | 9.3.8-ce.0                                                                                                             
+pullPolicy                    | Pull Policy | IfNotPresent
+service.name                   | Service Name | gitlab-ce
+service.type                    | Service Type | NodePort
+service.http                    | NodePort for HTTP communication | 30126
+service.https                    | NodePort for HTTPS communication | 30127
+
+## Uninstalling the release
+
+NOTE: this will remove all GitLab pod deployments, services and ingress rules (if enabled) that were installed on your Kube cluster as part of this release.
+
 ```sh
-$ helm init
-$ helm repo add mycharts https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/
-$ helm fetch mycharts/gitlab-ce
-```
-
-```bash
-$ helm install --name gitlab mycharts/gitlab-ce
-
+$ helm delete gitlab --purge
 ```

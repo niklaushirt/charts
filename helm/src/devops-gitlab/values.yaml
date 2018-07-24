@@ -3,8 +3,11 @@
 # Declare variables to be passed into your templates.
 replicaCount: 1
 image:
-  name: gitlab/gitlab-ce:9.3.8-ce.0
+  name: gitlab/gitlab-ce
+  tag: 9.3.8-ce.0
   pullPolicy: IfNotPresent
 service:
   name: gitlab-ce
   type: NodePort
+  http: 30126
+  https: 30127

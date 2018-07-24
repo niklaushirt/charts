@@ -4,7 +4,7 @@ IBM UrbanCode Deploy is a tool for automating application deployments through yo
 This chart installs the UCD Server.
 
 
-![UCD_MAP](https://developer.ibm.com/urbancode/wp-content/themes/projectnext-urbancode/images/products/deploy/deploy-infographic.png)
+![UCD_MAP](https://github.com/niklaushirt/charts/blob/master/helm/charts/icons/ucd_bp.png)
 
 
 
