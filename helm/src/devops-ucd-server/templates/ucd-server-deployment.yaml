@@ -32,12 +32,12 @@ spec:
         resources: {}
         env:
         - name: SERVER_ADDR
-          value: "{{ .Values.server.address }}"
+          value: "{{ .Values.server.nodeport.address }}"
         - name: SERVER_PORT_UI
-          value: "{{ .Values.server.port.ui }}"
+          value: "{{ .Values.server.nodeport.ui }}"
         - name: SERVER_PORT_JMS
-          value: "{{ .Values.server.port.jms }}"
+          value: "{{ .Values.server.nodeport.jms }}"
         - name: SERVER_PORT_HTTP
-          value: "{{ .Values.server.port.http }}"
+          value: "{{ .Values.server.nodeport.http }}"
       restartPolicy: Always
 status: {}
