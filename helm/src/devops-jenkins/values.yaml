@@ -44,7 +44,7 @@ Master:
   #   service.beta.kubernetes.io/aws-load-balancer-backend-protocol: https
   # Used to create Ingress record (should used with ServiceType: ClusterIP)
   # HostName: jenkins.cluster.local
-  # NodePort: <to set explicitly, choose port between 30000-32767
+  NodePort: 30128
   ContainerPort: 8080
   # Enable Kubernetes Liveness and Readiness Probes
   HealthProbes: true

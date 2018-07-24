@@ -1,10 +1,11 @@
 # UrbanCode Deploy Server
 
+> **This Chart is part of the Demo DevOps Pipeline**
+
 IBM UrbanCode Deploy is a tool for automating application deployments through your environments. It is designed to facilitate rapid feedback and continuous delivery in agile development while providing the audit trails, versioning and approvals needed in production.
 This chart installs the UCD Server.
 
-
-![UCD_MAP](https://github.com/niklaushirt/charts/blob/master/helm/charts/icons/ucd_bp.png)
+![UCD_MAP](https://github.com/niklaushirt/charts/raw/master/helm/charts/icons/ucd_bp.png)
 
 
 

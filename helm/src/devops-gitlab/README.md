@@ -1,6 +1,11 @@
 # GitLab Helm Chart
 
-![GL_MAP](https://github.com/niklaushirt/charts/blob/master/helm/charts/icons/gitlab_bp.png)
+> **This Chart is part of the Demo DevOps Pipeline**
+
+
+GitLab is the first single application built from the ground up for all stages of the DevOps lifecycle for Product, Development, QA, Security, and Operations teams to work concurrently on the same project. GitLab enables teams to collaborate and work from a single conversation, instead of managing multiple threads across disparate tools. GitLab provides teams a single data store, one user interface, and one permission model across the DevOps lifecycle allowing teams to collaborate, significantly reducing cycle time and focus exclusively on building great software quickly.
+
+![GL_MAP](https://github.com/niklaushirt/charts/raw/master/helm/charts/icons/gitlab_bp.png)
 
 
 
@@ -24,7 +29,7 @@
 3. Deploy to your Kubernetes cluster.
 
   ```sh
-  $ helm install --name gitlab mycharts/gitlab-ce
+  $ helm install --name gitlab mycharts/devops-gitlab
 
   ```
 

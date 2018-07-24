@@ -1,25 +1,43 @@
 # Jenkins Helm Chart
 
+> **This Chart is part of the Demo DevOps Pipeline**
+
+Jenkins is an open source automation server written in Java. Jenkins helps to automate the non-human part of the software development process, with continuous integration and facilitating technical aspects of continuous delivery.
+
+
+![JNK_MAP](https://github.com/niklaushirt/charts/raw/master/helm/charts/icons/jenkins_bp.png)
+
 Jenkins master and slave cluster utilizing the Jenkins Kubernetes plugin
 
 * https://wiki.jenkins-ci.org/display/JENKINS/Kubernetes+Plugin
 
 Inspired by the awesome work of Carlos Sanchez <mailto:carlos@apache.org>
 
-## Chart Details
+## Pre-requisite
 
-This chart will do the following:
+- Kubernetes 1.4+ with Beta APIs enabled
+- Helm v2.6  (version might vary, which ever is compatible with your Kuberetes cluster).
 
-* 1 x Jenkins Master with port 8080 exposed on an external LoadBalancer
-* All using Kubernetes Deployments
+## Installing the Chart and images
 
-## Installing the Chart
+1. Get the required helm charts.
 
-To install the chart with the release name `my-release`:
+  ```sh
+  $ helm init
+  $ helm repo add mycharts https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/
+  $ helm fetch mycharts/devops-jenkins
+  ```
 
-```bash
-$ helm install --name jenkins stable/jenkins
-```
+2. Refer to the Configuration section below to customize the deployment. The following step (step 3) shows the values at minimal that are required to be set.
+
+3. Deploy to your Kubernetes cluster.
+
+  ```sh
+  $ helm install --name gitlab mycharts/devops-jenkins
+
+  ```
+
+4. Read the NOTES section from the result of the previous command.
 
 ## Configuration
 
@@ -91,11 +109,20 @@ Specify each parameter using the `--set key=value[,key=value]` argument to `helm
 
 Alternatively, a YAML file that specifies the values for the parameters can be provided while installing the chart. For example,
 
-```bash
-$ helm install --name my-release -f values.yaml stable/jenkins
+
+## Uninstalling the release
+
+NOTE: this will remove all GitLab pod deployments, services and ingress rules (if enabled) that were installed on your Kube cluster as part of this release.
+
+```sh
+$ helm delete jenkins --purge
 ```
 
-> **Tip**: You can use the default [values.yaml](values.yaml)
+
+
+
+
+# Detailed Configuration
 
 ## Mounting volumes into your Agent pods
 
