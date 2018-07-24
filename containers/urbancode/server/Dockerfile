@@ -19,7 +19,8 @@ FROM ibmjava:8-sfj-alpine
 MAINTAINER Niklaus Hirt <niklaushirt@gmail.com>
 
 #Copy the files to tmp folder
-COPY ./common /tmp/
+COPY ./common/*.zip /tmp/
+COPY ./common/*.properties /tmp/
 
 # install the UCD Server and remove the install files.
 RUN unzip -q /tmp/*.zip -d /tmp
@@ -28,6 +29,7 @@ RUN 	sh /tmp/ibm-ucd-install/install-server.sh
 RUN 	rm -rf /tmp/ibm-ucd-install
 RUN 	rm -f /tmp/install.properties
 
+COPY ./common/*.sh /tmp/
 
 # HTTP, HTTPS, JMS
 EXPOSE 8080

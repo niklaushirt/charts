@@ -30,5 +30,14 @@ spec:
         - containerPort: 7918
         - containerPort: 7919
         resources: {}
+        env:
+        - name: SERVER_ADDR
+          value: "{{ .Values.server.address }}"
+        - name: SERVER_PORT_UI
+          value: "{{ .Values.server.port.ui }}"
+        - name: SERVER_PORT_JMS
+          value: "{{ .Values.server.port.jms }}"
+        - name: SERVER_PORT_HTTP
+          value: "{{ .Values.server.port.http }}"
       restartPolicy: Always
 status: {}

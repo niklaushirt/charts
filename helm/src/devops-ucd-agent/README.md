@@ -59,8 +59,8 @@ Parameter                     | Description                                     
 image.tag | Version of the UCD | 7.0.0                                                                                                            
 agent.name                    | Name of the Agent to appear in UCD Server | myagent
 server.adress                    | Address of the UCD Server | ucd-server
-server.port.jms                    | Port for JMS communication | 7918
-server.port.http                    | Port for HTTP communication | 7919
+server.port.jms                    | Port for JMS communication | 30124
+server.port.http                    | Port for HTTP communication | 30125
 
 
 ## Uninstalling the release

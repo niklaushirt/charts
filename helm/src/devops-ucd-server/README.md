@@ -31,6 +31,7 @@ This chart installs the UCD Server.
   ```sh
   $ helm install \
       --set server.serviceType=LoadBalancer \
+      --set server.nodeport.address=ucd-server-ip \
       --set server.nodeport.ui=30123 \
       --set server.nodeport.jms=30124 \
       --set server.nodeport.http=30125 \
@@ -48,9 +49,10 @@ Parameter                     | Description                                     
 ----------------------------- | ---------------------------------------------------------------------------------------------------| ---------------------
 image.tag | Version of the UCD | 7.0.0                                                                                                            
 server.serviceType                    | Type of the Kubernetes Service | Load Balancer
-server.nodeport.ui                    | NodePort to reach UI | 7918
-server.nodeport.jms                    | NodePort for JMS communication | 7918
-server.nodeport.http                    | NodePort for HTTP communication | 7919
+server.nodeport.address                    | Address to reach UI | ucd-server
+server.nodeport.ui                    | NodePort to reach UI | 30123
+server.nodeport.jms                    | NodePort for JMS communication | 30124
+server.nodeport.http                    | NodePort for HTTP communication | 30125
 
 ## Uninstalling the release
 

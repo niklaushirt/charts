@@ -35,6 +35,21 @@ docker run -d --rm --name ucd-agent --network ucd_net -e "AGENT_NAME=myagent3" -
 https://raw.githubusercontent.com/niklaushirt/urbancode_chart/master/helm/charts/repo/stable/
 ```
 
+
+## Test SERVER
+
+```bash
+docker build -t "ucds:7.0.0" ./server
+docker kill ucds
+docker run -d --rm --name ucds -e "SERVER_ADDR=9.30.189.183" -e "SERVER_PORT_UI=30123" -e "SERVER_PORT_JMS=30124" -e "SERVER_PORT_HTTP=30125" -t ucds:7.0.0
+docker run  --rm --name ucds -e "SERVER_ADDR=9.30.189.183" -e "SERVER_PORT_UI=30123" -e "SERVER_PORT_JMS=30124" -e "SERVER_PORT_HTTP=30125" -t ucds:7.0.0
+
+docker exec -it ucds /bin/sh
+
+docker kill ucds
+
+```
+
 ## Test AGENT
 
 ```bash

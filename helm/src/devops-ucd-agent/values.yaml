@@ -12,5 +12,5 @@ agent:
 server:
   address: "ucd-server"
   port:
-    jms: "7918"
-    http: "7919"
+    jms: "30124"
+    http: "30125"
