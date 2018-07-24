@@ -28,6 +28,9 @@ echo "--------------------------------------------------------------------------
 sed -i '/agentcomm.uri/d' /opt/ibm-ucd/server/conf/server/installed.properties
 sed -i '/agent.comm.uri/d' /opt/ibm-ucd/server/conf/server/installed.properties
 sed -i '/server.external.web.ur/d' /opt/ibm-ucd/server/conf/server/installed.properties
+sed -i '/install.server.web.host/d' /opt/ibm-ucd/server/conf/server/installed.properties
+sed -i '/install.server.web.https.port/d' /opt/ibm-ucd/server/conf/server/installed.properties
+sed -i '/install.server.web.ip/d' /opt/ibm-ucd/server/conf/server/installed.properties
 
 
 echo "Copying Plugins files at $timestamp."
@@ -42,19 +45,35 @@ if [ $SERVER_ADDR ]; then
 fi
 
 if [ $SERVER_PORT_UI ]; then
-  echo "server.external.web.url=https://ucd-server:"$SERVER_PORT_UI >> /opt/ibm-ucd/server/conf/server/installed.properties
+  echo "server.external.web.url=https://"$SERVER_ADDR":"$SERVER_PORT_UI >> /opt/ibm-ucd/server/conf/server/installed.properties
 else
   echo "server.external.web.url=https://ucd-server:8443" >> /opt/ibm-ucd/server/conf/server/installed.properties
 fi
 
+if [ $SERVER_ADDR ]; then
+  echo "install.server.web.host="$SERVER_ADDR >> /opt/ibm-ucd/server/conf/server/installed.properties
+else
+  echo "install.server.web.host=ucd-server" >> /opt/ibm-ucd/server/conf/server/installed.properties
+fi
+if [ $SERVER_ADDR ]; then
+  echo "install.server.web.ip="$SERVER_ADDR >> /opt/ibm-ucd/server/conf/server/installed.properties
+else
+  echo "install.server.web.ip=ucd-server" >> /opt/ibm-ucd/server/conf/server/installed.properties
+fi
+if [ $SERVER_ADDR ]; then
+  echo "install.server.web.https.port="$SERVER_PORT_UI >> /opt/ibm-ucd/server/conf/server/installed.properties
+else
+  echo "install.server.web.https.port=8443" >> /opt/ibm-ucd/server/conf/server/installed.properties
+fi
+
 if [ $SERVER_PORT_HTTP ]; then
-  echo "agentcomm.uri=wss://ucd-server:"$SERVER_PORT_HTTP >> /opt/ibm-ucd/server/conf/server/installed.properties
+  echo "agentcomm.uri=wss://"$SERVER_ADDR":"$SERVER_PORT_HTTP >> /opt/ibm-ucd/server/conf/server/installed.properties
 else
   echo "agentcomm.uri=wss://ucd-server:7919" >> /opt/ibm-ucd/server/conf/server/installed.properties
 fi
 
 if [ $SERVER_PORT_HTTP ]; then
-  echo "agent.comm.uri=wss://ucd-server:"$SERVER_PORT_HTTP >> /opt/ibm-ucd/server/conf/server/installed.properties
+  echo "agent.comm.uri=wss://"$SERVER_ADDR":"$SERVER_PORT_HTTP >> /opt/ibm-ucd/server/conf/server/installed.properties
 else
   echo "agent.comm.uri=wss://ucd-server:7919" >> /opt/ibm-ucd/server/conf/server/installed.properties
 fi
