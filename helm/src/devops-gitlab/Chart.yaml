@@ -1,7 +1,7 @@
 apiVersion: v1
 description: A Helm chart for a complete DevOps Pipeline - GitLab CE
 name: devops-gitlab
-version: 1.0.0
+version: 1.0.1
 appVersion: 9.3.8-ce.0
 sources:
 - https://github.com/niklaushirt/charts

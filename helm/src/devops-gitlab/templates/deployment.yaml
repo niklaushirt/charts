@@ -15,7 +15,7 @@ spec:
         beta.kubernetes.io/arch: "amd64"
       containers:
       - name: {{ .Chart.Name }}
-        image: "{{ .Values.image.name }}":{{ .Values.image.tag }}
+        image: {{ .Values.image.name }}:{{ .Values.image.tag }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         ports:
         - name: ssh
