@@ -33,7 +33,7 @@ Inspired by the awesome work of Carlos Sanchez <mailto:carlos@apache.org>
 3. Deploy to your Kubernetes cluster.
 
   ```sh
-  $ helm install --name gitlab mycharts/devops-jenkins
+  $ helm install --name jenkins mycharts/devops-jenkins
 
   ```
 

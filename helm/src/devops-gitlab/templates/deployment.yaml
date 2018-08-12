@@ -24,6 +24,13 @@ spec:
           containerPort: 80
         - name: https
           containerPort: 443
+        resources:
+          requests:
+            memory: {{ .Values.resources.requests.memory }}
+            cpu: {{ .Values.resources.requests.cpu }}
+          limits:
+            memory: {{ .Values.resources.limits.memory }}
+            cpu: {{ .Values.resources.limits.cpu }}
         volumeMounts:
         - name: gitlab-config
           mountPath: /etc/gitlab
