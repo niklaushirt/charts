@@ -25,6 +25,7 @@ helm package openwhisk
 helm package sonarqube
 helm package tomcat
 helm package velocity
+helm package ibm-blockchain-network
 
 #HACK for DEMO LIBERTY
 cp ../../containers/demoliberty/chart_versions/*.tgz .
