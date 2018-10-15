@@ -1,8 +1,10 @@
 apiVersion: v1
 description: A Helm chart for a complete DevOps Pipeline - Jenkins
 name: devops-jenkins
-version: 1.0.2
-appversion: 2.132
+version: 3.1.0
+appVersion: 2.132
+keywords:
+- DevOps
 sources:
 - https://github.com/niklaushirt/charts
 home: https://jenkins.io/

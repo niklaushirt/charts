@@ -2,15 +2,16 @@ apiVersion: v1
 entries:
   datadog:
   - appVersion: 6.2.0
-    created: 2018-08-27T17:34:20.692919066+02:00
+    created: 2018-10-15T14:54:07.838404731+02:00
     description: DataDog Agent
-    digest: 182077eb6932a44c0aea9df97564e887cf6261c0353c906079e61007954073fc
+    digest: f8db03af55f01d8f6c386f84f8127c620f262f587deb013befece3a70fd72a77
     home: https://www.datadoghq.com
     icon: https://datadog-live.imgix.net/img/dd_logo_70x75.png
     keywords:
     - monitoring
     - alerting
     - metric
+    - Operations
     maintainers:
     - email: haissam@datadoghq.com
       name: hkaj
@@ -24,10 +25,10 @@ entries:
     - https://github.com/DataDog/datadog-agent
     - https://github.com/DataDog/docker-dd-agent
     urls:
-    - https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/datadog-0.11.3.tgz
-    version: 0.11.3
+    - https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/datadog-3.1.0.tgz
+    version: 3.1.0
   demoliberty:
-  - created: 2018-08-27T17:34:20.694297393+02:00
+  - created: 2018-10-15T14:54:07.840623672+02:00
     description: Simple Liberty Demo
     digest: 157aa7c7d45d2cfadb692e1836f9d60a2745460d21eeb5bd7e8bd1ddde3311a1
     home: https://github.com/kubernetes/helm
@@ -46,7 +47,7 @@ entries:
     urls:
     - https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/demoliberty-1.3.0.tgz
     version: 1.3.0
-  - created: 2018-08-27T17:34:20.693953838+02:00
+  - created: 2018-10-15T14:54:07.839795115+02:00
     description: Simple Liberty Demo
     digest: a0742ab206add9684a16be86564f6a32f551cd14a6141fc71c85fb59f8fa3cc3
     home: https://github.com/kubernetes/helm
@@ -65,7 +66,7 @@ entries:
     urls:
     - https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/demoliberty-1.2.0.tgz
     version: 1.2.0
-  - created: 2018-08-27T17:34:20.693639993+02:00
+  - created: 2018-10-15T14:54:07.839320446+02:00
     description: Simple Liberty Demo
     digest: b587bf9cec1e6fe79cecdcd532310386e3d704b0def5994aa5adfea539eb136e
     home: https://github.com/kubernetes/helm
@@ -84,7 +85,7 @@ entries:
     urls:
     - https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/demoliberty-1.1.0.tgz
     version: 1.1.0
-  - created: 2018-08-27T17:34:20.693272228+02:00
+  - created: 2018-10-15T14:54:07.838842734+02:00
     description: Simple Liberty Demo
     digest: 56d8ecc05c39bc2caa668240fb33a1f31a14f10e281c9af0b59a741117d39c22
     home: https://github.com/kubernetes/helm
@@ -106,11 +107,13 @@ entries:
   devops-gitlab:
   - apiVersion: v1
     appVersion: 9.3.8-ce.0
-    created: 2018-08-27T17:34:20.694624595+02:00
+    created: 2018-10-15T14:54:07.841502306+02:00
     description: A Helm chart for a complete DevOps Pipeline - GitLab CE
-    digest: 012068ce2ea103740270597566cb5d1239f44e761fb6012714c9c4e6b7c00135
+    digest: 25f52d71be0540379638e6dd02a5aade656975086b4c079ade9b7916261570c3
     home: http://gitlab.com
     icon: https://docs.gitlab.com/assets/images/gitlab-logo.svg
+    keywords:
+    - DevOps
     maintainers:
     - email: niklaushirt@gmail.com
       name: Niklaus Hirt
@@ -118,16 +121,18 @@ entries:
     sources:
     - https://github.com/niklaushirt/charts
     urls:
-    - https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/devops-gitlab-1.0.1.tgz
-    version: 1.0.1
+    - https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/devops-gitlab-3.1.0.tgz
+    version: 3.1.0
   devops-jenkins:
   - apiVersion: v1
     appVersion: "2.132"
-    created: 2018-08-27T17:34:20.695415148+02:00
+    created: 2018-10-15T14:54:07.842343341+02:00
     description: A Helm chart for a complete DevOps Pipeline - Jenkins
-    digest: 043064f504943e95f7c69ccf588cdb8630e3466b6244aede56771715ac61e79f
+    digest: 93cb8db8ac7cd9d5fa480cc4e31e38c394ac489f3c620ee83225fe8c9ed15a46
     home: https://jenkins.io/
     icon: https://wiki.jenkins-ci.org/download/attachments/2916393/logo.png
+    keywords:
+    - DevOps
     maintainers:
     - email: niklaushirt@gmail.com
       name: Niklaus Hirt
@@ -135,16 +140,18 @@ entries:
     sources:
     - https://github.com/niklaushirt/charts
     urls:
-    - https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/devops-jenkins-1.0.2.tgz
-    version: 1.0.2
+    - https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/devops-jenkins-3.1.0.tgz
+    version: 3.1.0
   devops-ucd-agent:
   - apiVersion: v1
     appVersion: 7.0.0
-    created: 2018-08-27T17:34:20.695728982+02:00
+    created: 2018-10-15T14:54:07.842687038+02:00
     description: A Helm chart for a complete DevOps Pipeline - IBM UrbanCode Deploy
       Agent
-    digest: 56650baf54823888ffa3f6d4d8807b321ba3a71f5db04d34156cf3e9abe22a20
+    digest: f3ba5df46a478e74d1ac4d25e039a7d97c5e68ca034e540427cf832ae73dad1d
     icon: https://github.com/niklaushirt/charts/raw/master/helm/charts/icons/urbancodedeployicon.png
+    keywords:
+    - DevOps
     maintainers:
     - email: niklaushirt@gmail.com
       name: Niklaus Hirt
@@ -152,16 +159,18 @@ entries:
     sources:
     - https://github.com/niklaushirt/charts
     urls:
-    - https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/devops-ucd-agent-1.0.0.tgz
-    version: 1.0.0
+    - https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/devops-ucd-agent-3.1.0.tgz
+    version: 3.1.0
   devops-ucd-server:
   - apiVersion: v1
     appVersion: 7.0.0
-    created: 2018-08-27T17:34:20.696084173+02:00
+    created: 2018-10-15T14:54:07.843018582+02:00
     description: A Helm chart for a complete DevOps Pipeline - IBM UrbanCode Deploy
       Server
-    digest: cbbb96430b43f4556b15a1953b0d45aba130c4e49e2756680fcd27128b951001
+    digest: 1c23648026e000f18e52c743f5e8366c009732ef14dfae05e245bb7130426758
     icon: https://github.com/niklaushirt/charts/raw/master/helm/charts/icons/urbancodedeployicon.png
+    keywords:
+    - DevOps
     maintainers:
     - email: niklaushirt@gmail.com
       name: Niklaus Hirt
@@ -169,36 +178,13 @@ entries:
     sources:
     - https://github.com/niklaushirt/charts
     urls:
-    - https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/devops-ucd-server-1.0.1.tgz
-    version: 1.0.1
-  ibm-blockchain-network:
-  - appVersion: 1.0.0
-    created: 2018-08-27T17:34:20.696626651+02:00
-    description: IBM Blockchain Network Chart
-    digest: a8fc8a81eb7892dac243c5e298fee7b56e05be4993737a8518e6ad3a0b2ad85c
-    engine: gotpl
-    home: https://ibm-blockchain.github.io
-    icon: https://www.ibm.com/blogs/bluemix/wp-content/uploads/2016/02/IBM_Blockchain_Hero.png
-    keywords:
-    - blockchain
-    maintainers:
-    - email: mrshah@us.ibm.com
-      name: mrshah-at-ibm
-    - email: dbshah@us.ibm.com
-      name: dhyey20
-    - email: deallen@us.ibm.com
-      name: eddie-at-ibm
-    name: ibm-blockchain-network
-    sources:
-    - https://github.ibm.com/IBM-Blockchain/ibm-container-service
-    urls:
-    - https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/ibm-blockchain-network-1.0.0.tgz
-    version: 1.0.0
+    - https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/devops-ucd-server-3.1.0.tgz
+    version: 3.1.0
   kubernetes-dashboard:
   - appVersion: 1.7.1
-    created: 2018-08-27T17:34:20.697131739+02:00
+    created: 2018-10-15T14:54:07.843392827+02:00
     description: General-purpose web UI for Kubernetes clusters
-    digest: bf5b44c94dc53acd00a52d694da6b18f5ddc6e4d69a7fccdc11ddbaf45fc429b
+    digest: fa82020305d26e5f4652f7947d891390b98abb962bfac2af3f45ed7370ddc539
     keywords:
     - kubernetes
     - dashboard
@@ -207,13 +193,14 @@ entries:
       name: kfox1111
     name: kubernetes-dashboard
     urls:
-    - https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/kubernetes-dashboard-0.4.2.tgz
-    version: 0.4.2
+    - https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/kubernetes-dashboard-3.1.0.tgz
+    version: 3.1.0
   mariadb:
-  - created: 2018-08-27T17:34:20.704645269+02:00
+  - appVersion: 1.1.2
+    created: 2018-10-15T14:54:07.850310637+02:00
     description: MariaDB is developed as open source software and as a relational
       database it provides an SQL interface for accessing data.
-    digest: 81a4c1a6a17b16192b91baf167376114478f4a7a56ca6ad5a641f05fb913deb7
+    digest: 14dc2de3407b6daa247a26ac38abc636d97a17f99423b528ed4b52a368c33d05
     engine: gotpl
     home: https://www.mariadb.org/
     keywords:
@@ -227,15 +214,15 @@ entries:
     - https://github.com/IBM/charts/tree/master/stable
     tillerVersion: '>=2.4.0'
     urls:
-    - https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/mariadb-1.1.2.tgz
-    version: 1.1.2
+    - https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/mariadb-3.1.0.tgz
+    version: 3.1.0
   mongodb:
   - appVersion: 3.4.10
-    created: 2018-08-27T17:34:20.705032327+02:00
+    created: 2018-10-15T14:54:07.85079975+02:00
     description: NoSQL document-oriented database that stores JSON-like documents
       with dynamic schemas, simplifying the integration of data in content-driven
       applications.
-    digest: 80be6e504a166646b56c1daa5f5135f4d58055c528d40f66faf08da1f464bd5d
+    digest: 088b2f0b5b081fafe0e9722252e6b803b113abae5478768f455418c32077d8e9
     engine: gotpl
     home: https://mongodb.org
     icon: https://bitnami.com/assets/stacks/mongodb/img/mongodb-stack-220x234.png
@@ -250,12 +237,13 @@ entries:
     sources:
     - https://github.com/bitnami/bitnami-docker-mongodb
     urls:
-    - https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/mongodb-0.4.18.tgz
-    version: 0.4.18
+    - https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/mongodb-3.1.0.tgz
+    version: 3.1.0
   nginx:
-  - created: 2018-08-27T17:34:20.70529181+02:00
+  - appVersion: 1.8.1
+    created: 2018-10-15T14:54:07.851111847+02:00
     description: Nginx for Linux
-    digest: 0d1c565930c844dcc1c6fbfaa4abbfe175964134969e40985e16c88306757d97
+    digest: e5d3fb32b2be50d873ada9b2e328419e189d215d5296714e8a86d5024ed3aa61
     home: https://github.com/kubernetes/helm
     icon: https://pbs.twimg.com/profile_images/567774844322713600/tYoVju31.png
     keywords:
@@ -270,13 +258,14 @@ entries:
     sources:
     - https://hub.docker.com/_/nginx/
     urls:
-    - https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/nginx-1.8.1.tgz
-    version: 1.8.1
+    - https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/nginx-3.1.0.tgz
+    version: 3.1.0
   nodered:
   - apiVersion: v1
-    created: 2018-08-27T17:34:20.705599202+02:00
+    appVersion: 0.17.5
+    created: 2018-10-15T14:54:07.851555126+02:00
     description: A Helm chart for NodeRed
-    digest: f577a43b2c030563835ab5d42c1e44af1a7dd36c0b6b2e60ed772f066b6ee180
+    digest: 3b75b7ddec95bedab9fc69b6d8ce65ed67a0dac6d94c090b3a9e5da633794a07
     icon: https://github.com/niklaushirt/chartslocal/raw/master/icons/noderedicon.png
     maintainers:
     - email: niklaushirt@gmail.com
@@ -285,11 +274,11 @@ entries:
     sources:
     - https://github.com/niklaushirt/chartslocal
     urls:
-    - https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/nodered-0.17.5.tgz
-    version: 0.17.5
+    - https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/nodered-3.1.0.tgz
+    version: 3.1.0
   openwhisk:
   - apiVersion: v1
-    created: 2018-08-27T17:34:20.706383357+02:00
+    created: 2018-10-15T14:54:07.852388525+02:00
     description: A Helm chart to deploy Apache OpenWhisk for Kubernetes
     digest: 860329a1c3eb2a59d8246e8b545b6c97056b93a9e5dda8cf06e36adea76ccef1
     keywords:
@@ -303,9 +292,9 @@ entries:
     version: 0.1.1
   sonarqube:
   - appVersion: "6.5"
-    created: 2018-08-27T17:34:20.707143677+02:00
+    created: 2018-10-15T14:54:07.853344567+02:00
     description: Sonarqube is an open sourced code quality scanning tool
-    digest: 7f566d1492d130b31652d0c6e4b3541892bdc30ea50ae4694ccf5a96cacc2db0
+    digest: 20ac91ea732e2583fb8b73b83b4ea18b54f871b29ba9b6071d561f2ec8f75c5b
     home: https://www.sonarqube.org/
     icon: https://www.sonarqube.org/assets/logo-31ad3115b1b4b120f3d1efd63e6b13ac9f1f89437f0cf6881cc4d8b5603a52b4.svg
     keywords:
@@ -313,6 +302,7 @@ entries:
     - security
     - code
     - quality
+    - DevOps
     maintainers:
     - email: rjkernick@gmail.com
       name: rjkernick
@@ -320,28 +310,34 @@ entries:
     sources:
     - https://github.com/SonarSource/docker-sonarqube
     urls:
-    - https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/sonarqube-0.2.0.tgz
-    version: 0.2.0
+    - https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/sonarqube-3.1.0.tgz
+    version: 3.1.0
   tomcat:
   - apiVersion: v1
-    created: 2018-08-27T17:34:20.707454693+02:00
+    appVersion: "9"
+    created: 2018-10-15T14:54:07.853701159+02:00
     description: Tomcat for Linux
-    digest: 30045c45c1b544bfd61716f6ccb1c3d4c326c80e80f70d51dc4964e8c32b1b97
+    digest: 7c0c0714b4ac9a04bc257e89e74fc0cf72d931f11a412c216748ae50a0b3f66a
     home: https://hub.docker.com/_/tomcat/
     icon: http://tomcat.apache.org/images/tomcat.png
+    keywords:
+    - runtime
     name: tomcat
     sources:
     - https://github.com/docker-library/tomcat
     urls:
-    - https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/tomcat-9.0.tgz
-    version: "9.0"
+    - https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/tomcat-3.1.0.tgz
+    version: 3.1.0
   velocity:
   - apiVersion: v1
-    created: 2018-08-27T17:34:20.707856189+02:00
+    appVersion: 1.0.0
+    created: 2018-10-15T14:54:07.854147756+02:00
     description: Deploys UrbanCode Velocity
-    digest: f33e68b6e259b8e558fae3bf096178b7d131120fea05accb93c3d12f0d7435d4
+    digest: ff7c0b9dd4f28af1202c0f46dc7fbdebf2f888c7038f0accf6e1c9ace727d76d
+    keywords:
+    - DevOps
     name: velocity
     urls:
-    - https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/velocity-1.0.0.tgz
-    version: 1.0.0
-generated: 2018-08-27T17:34:20.691097198+02:00
+    - https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/velocity-3.1.0.tgz
+    version: 3.1.0
+generated: 2018-10-15T14:54:07.837110492+02:00

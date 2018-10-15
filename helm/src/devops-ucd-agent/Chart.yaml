@@ -1,8 +1,10 @@
 apiVersion: v1
 description: A Helm chart for a complete DevOps Pipeline - IBM UrbanCode Deploy Agent
 name: devops-ucd-agent
-version: 1.0.0
-appversion: 7.0.0
+version: 3.1.0
+appVersion: 7.0.0
+keywords:
+- DevOps
 sources:
 - https://github.com/niklaushirt/charts
 icon: https://github.com/niklaushirt/charts/raw/master/helm/charts/icons/urbancodedeployicon.png
