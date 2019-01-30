@@ -1,0 +1,14 @@
+replicaCount: 1
+
+appInClusterNamespace:
+
+targetCluster:
+  labelSelector:
+    matchLabels:
+      vendor: "IBM"
+      region: "US"
+      environment: "Prod"
+      datacenter: "newyork"
+      owner: "IT"
+  resourceSelector:
+    type: cpu

@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   datadog:
   - appVersion: 6.2.0
-    created: 2018-10-15T14:54:07.838404731+02:00
+    created: 2019-01-30T11:32:42.14764114+01:00
     description: DataDog Agent
     digest: f8db03af55f01d8f6c386f84f8127c620f262f587deb013befece3a70fd72a77
     home: https://www.datadoghq.com
@@ -28,7 +28,7 @@ entries:
     - https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/datadog-3.1.0.tgz
     version: 3.1.0
   demoliberty:
-  - created: 2018-10-15T14:54:07.840623672+02:00
+  - created: 2019-01-30T11:32:42.149727074+01:00
     description: Simple Liberty Demo
     digest: 157aa7c7d45d2cfadb692e1836f9d60a2745460d21eeb5bd7e8bd1ddde3311a1
     home: https://github.com/kubernetes/helm
@@ -47,7 +47,7 @@ entries:
     urls:
     - https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/demoliberty-1.3.0.tgz
     version: 1.3.0
-  - created: 2018-10-15T14:54:07.839795115+02:00
+  - created: 2019-01-30T11:32:42.149222723+01:00
     description: Simple Liberty Demo
     digest: a0742ab206add9684a16be86564f6a32f551cd14a6141fc71c85fb59f8fa3cc3
     home: https://github.com/kubernetes/helm
@@ -66,7 +66,7 @@ entries:
     urls:
     - https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/demoliberty-1.2.0.tgz
     version: 1.2.0
-  - created: 2018-10-15T14:54:07.839320446+02:00
+  - created: 2019-01-30T11:32:42.148666658+01:00
     description: Simple Liberty Demo
     digest: b587bf9cec1e6fe79cecdcd532310386e3d704b0def5994aa5adfea539eb136e
     home: https://github.com/kubernetes/helm
@@ -85,7 +85,7 @@ entries:
     urls:
     - https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/demoliberty-1.1.0.tgz
     version: 1.1.0
-  - created: 2018-10-15T14:54:07.838842734+02:00
+  - created: 2019-01-30T11:32:42.148174646+01:00
     description: Simple Liberty Demo
     digest: 56d8ecc05c39bc2caa668240fb33a1f31a14f10e281c9af0b59a741117d39c22
     home: https://github.com/kubernetes/helm
@@ -107,7 +107,7 @@ entries:
   devops-gitlab:
   - apiVersion: v1
     appVersion: 9.3.8-ce.0
-    created: 2018-10-15T14:54:07.841502306+02:00
+    created: 2019-01-30T11:32:42.150156493+01:00
     description: A Helm chart for a complete DevOps Pipeline - GitLab CE
     digest: 25f52d71be0540379638e6dd02a5aade656975086b4c079ade9b7916261570c3
     home: http://gitlab.com
@@ -126,7 +126,7 @@ entries:
   devops-jenkins:
   - apiVersion: v1
     appVersion: "2.132"
-    created: 2018-10-15T14:54:07.842343341+02:00
+    created: 2019-01-30T11:32:42.151334403+01:00
     description: A Helm chart for a complete DevOps Pipeline - Jenkins
     digest: 93cb8db8ac7cd9d5fa480cc4e31e38c394ac489f3c620ee83225fe8c9ed15a46
     home: https://jenkins.io/
@@ -145,7 +145,7 @@ entries:
   devops-ucd-agent:
   - apiVersion: v1
     appVersion: 7.0.0
-    created: 2018-10-15T14:54:07.842687038+02:00
+    created: 2019-01-30T11:32:42.151920706+01:00
     description: A Helm chart for a complete DevOps Pipeline - IBM UrbanCode Deploy
       Agent
     digest: f3ba5df46a478e74d1ac4d25e039a7d97c5e68ca034e540427cf832ae73dad1d
@@ -164,7 +164,7 @@ entries:
   devops-ucd-server:
   - apiVersion: v1
     appVersion: 7.0.0
-    created: 2018-10-15T14:54:07.843018582+02:00
+    created: 2019-01-30T11:32:42.15246423+01:00
     description: A Helm chart for a complete DevOps Pipeline - IBM UrbanCode Deploy
       Server
     digest: 1c23648026e000f18e52c743f5e8366c009732ef14dfae05e245bb7130426758
@@ -180,9 +180,18 @@ entries:
     urls:
     - https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/devops-ucd-server-3.1.0.tgz
     version: 3.1.0
+  gbapp:
+  - apiVersion: v1
+    created: 2019-01-30T11:32:42.152884742+01:00
+    description: A Helm chart for Kubernetes
+    digest: f7d1c42dd1a33afb1ddbc6e6adefd02bdd3735c34356403f0652bf8421a68312
+    name: gbapp
+    urls:
+    - https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/gbapp-0.1.0.tgz
+    version: 0.1.0
   kubernetes-dashboard:
   - appVersion: 1.7.1
-    created: 2018-10-15T14:54:07.843392827+02:00
+    created: 2019-01-30T11:32:42.153470838+01:00
     description: General-purpose web UI for Kubernetes clusters
     digest: fa82020305d26e5f4652f7947d891390b98abb962bfac2af3f45ed7370ddc539
     keywords:
@@ -197,7 +206,7 @@ entries:
     version: 3.1.0
   mariadb:
   - appVersion: 1.1.2
-    created: 2018-10-15T14:54:07.850310637+02:00
+    created: 2019-01-30T11:32:42.162234971+01:00
     description: MariaDB is developed as open source software and as a relational
       database it provides an SQL interface for accessing data.
     digest: 14dc2de3407b6daa247a26ac38abc636d97a17f99423b528ed4b52a368c33d05
@@ -218,7 +227,7 @@ entries:
     version: 3.1.0
   mongodb:
   - appVersion: 3.4.10
-    created: 2018-10-15T14:54:07.85079975+02:00
+    created: 2019-01-30T11:32:42.162852888+01:00
     description: NoSQL document-oriented database that stores JSON-like documents
       with dynamic schemas, simplifying the integration of data in content-driven
       applications.
@@ -241,7 +250,7 @@ entries:
     version: 3.1.0
   nginx:
   - appVersion: 1.8.1
-    created: 2018-10-15T14:54:07.851111847+02:00
+    created: 2019-01-30T11:32:42.163283983+01:00
     description: Nginx for Linux
     digest: e5d3fb32b2be50d873ada9b2e328419e189d215d5296714e8a86d5024ed3aa61
     home: https://github.com/kubernetes/helm
@@ -263,7 +272,7 @@ entries:
   nodered:
   - apiVersion: v1
     appVersion: 0.17.5
-    created: 2018-10-15T14:54:07.851555126+02:00
+    created: 2019-01-30T11:32:42.163825782+01:00
     description: A Helm chart for NodeRed
     digest: 3b75b7ddec95bedab9fc69b6d8ce65ed67a0dac6d94c090b3a9e5da633794a07
     icon: https://github.com/niklaushirt/chartslocal/raw/master/icons/noderedicon.png
@@ -278,7 +287,7 @@ entries:
     version: 3.1.0
   openwhisk:
   - apiVersion: v1
-    created: 2018-10-15T14:54:07.852388525+02:00
+    created: 2019-01-30T11:32:42.164955921+01:00
     description: A Helm chart to deploy Apache OpenWhisk for Kubernetes
     digest: 860329a1c3eb2a59d8246e8b545b6c97056b93a9e5dda8cf06e36adea76ccef1
     keywords:
@@ -292,7 +301,7 @@ entries:
     version: 0.1.1
   sonarqube:
   - appVersion: "6.5"
-    created: 2018-10-15T14:54:07.853344567+02:00
+    created: 2019-01-30T11:32:42.166119305+01:00
     description: Sonarqube is an open sourced code quality scanning tool
     digest: 20ac91ea732e2583fb8b73b83b4ea18b54f871b29ba9b6071d561f2ec8f75c5b
     home: https://www.sonarqube.org/
@@ -315,7 +324,7 @@ entries:
   tomcat:
   - apiVersion: v1
     appVersion: "9"
-    created: 2018-10-15T14:54:07.853701159+02:00
+    created: 2019-01-30T11:32:42.166502366+01:00
     description: Tomcat for Linux
     digest: 7c0c0714b4ac9a04bc257e89e74fc0cf72d931f11a412c216748ae50a0b3f66a
     home: https://hub.docker.com/_/tomcat/
@@ -331,7 +340,7 @@ entries:
   velocity:
   - apiVersion: v1
     appVersion: 1.0.0
-    created: 2018-10-15T14:54:07.854147756+02:00
+    created: 2019-01-30T11:32:42.167274756+01:00
     description: Deploys UrbanCode Velocity
     digest: ff7c0b9dd4f28af1202c0f46dc7fbdebf2f888c7038f0accf6e1c9ace727d76d
     keywords:
@@ -340,4 +349,4 @@ entries:
     urls:
     - https://raw.githubusercontent.com/niklaushirt/charts/master/helm/charts/repo/stable/velocity-3.1.0.tgz
     version: 3.1.0
-generated: 2018-10-15T14:54:07.837110492+02:00
+generated: 2019-01-30T11:32:42.14579462+01:00

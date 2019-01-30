@@ -26,6 +26,7 @@ helm package sonarqube
 helm package tomcat
 helm package velocity
 helm package ibm-blockchain-network
+helm package gbapp
 
 #HACK for DEMO LIBERTY
 cp ../../containers/demoliberty/chart_versions/*.tgz .
